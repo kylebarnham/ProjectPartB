@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectpartb.RentalAddController">
    <children>
       <Button fx:id="backButton" layoutX="401.0" layoutY="366.0" mnemonicParsing="false" onAction="#backAction" prefHeight="25.0" prefWidth="90.0" text="Back" />
       <Button fx:id="submitButton" layoutX="501.0" layoutY="366.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="25.0" prefWidth="90.0" text="Submit" />

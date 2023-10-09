@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectpartb.CustomerViewController">
    <children>
       <Button fx:id="backButton" layoutX="496.0" layoutY="361.0" mnemonicParsing="false" onAction="#backAction" prefHeight="25.0" prefWidth="90.0" text="Back" />
       <TableView layoutX="52.0" layoutY="34.0" prefHeight="310.0" prefWidth="496.0">
