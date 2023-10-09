@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="backButton" layoutX="496.0" layoutY="361.0" mnemonicParsing="false" onAction="#backAction" prefHeight="25.0" prefWidth="90.0" text="Back" />
+      <TableView layoutX="52.0" layoutY="34.0" prefHeight="310.0" prefWidth="496.0">
+        <columns>
+          <TableColumn fx:id="rentalColumn" prefWidth="67.0" text="Rental ID" />
+          <TableColumn fx:id="customerColumn" prefWidth="76.0" text="Customer ID" />
+            <TableColumn fx:id="regoColumn" prefWidth="88.0" text="Registration" />
+            <TableColumn fx:id="startColumn" prefWidth="72.0" text="Rental Start" />
+            <TableColumn fx:id="endColumn" prefWidth="72.0" text="Rental End" />
+            <TableColumn fx:id="returnedColumn" prefWidth="60.0" text="Returned" />
+            <TableColumn fx:id="overdueColumn" prefWidth="60.0" text="Overdue" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
