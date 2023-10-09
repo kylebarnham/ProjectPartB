@@ -3,13 +3,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="219.0" layoutY="84.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="163.0" text="Customers" />
-      <Button layoutX="219.0" layoutY="147.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="163.0" text="Vehicles" />
-      <Button layoutX="219.0" layoutY="210.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="163.0" text="Rentals" />
-      <Button layoutX="491.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Exit" />
-      <Button layoutX="219.0" layoutY="273.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="163.0" text="Employees" />
+      <Button fx:id="customerButton" layoutX="219.0" layoutY="84.0" mnemonicParsing="false" onAction="#customerAction" prefHeight="43.0" prefWidth="163.0" text="Customers" />
+      <Button fx:id="vehicleButton" layoutX="219.0" layoutY="147.0" mnemonicParsing="false" onAction="#vehicleAction" prefHeight="43.0" prefWidth="163.0" text="Vehicles" />
+      <Button fx:id="rentalButton" layoutX="219.0" layoutY="210.0" mnemonicParsing="false" onAction="#rentalAction" prefHeight="43.0" prefWidth="163.0" text="Rentals" />
+      <Button fx:id="exitButton" layoutX="491.0" layoutY="356.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="25.0" prefWidth="90.0" text="Exit" />
+      <Button fx:id="empButton" layoutX="219.0" layoutY="273.0" mnemonicParsing="false" onAction="#empAction" prefHeight="43.0" prefWidth="163.0" text="Employees" />
    </children>
 </AnchorPane>
