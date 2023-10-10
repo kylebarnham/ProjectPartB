@@ -16,8 +16,8 @@ public class Customer extends User {
     private LocalDate licenseExpiry;
     private boolean manualLicense;
 
-    public Customer(int licenseNumber, LocalDate licenseExpiry, boolean manualLicense, int userID, String name, LocalDate birthDate, int age, String phoneNumber, String email, String password) {
-        super(userID, name, birthDate, age, phoneNumber, email, password);
+    public Customer(int userID, String name, LocalDate birthDate, String phoneNumber, String email, String password, int licenseNumber, LocalDate licenseExpiry, boolean manualLicense) {
+        super(userID, name, birthDate, phoneNumber, email, password);
         this.licenseNumber = licenseNumber;
         this.licenseExpiry = licenseExpiry;
         this.manualLicense = manualLicense;

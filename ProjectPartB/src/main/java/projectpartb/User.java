@@ -19,7 +19,7 @@ public class User {
     private String email;
     private String password;
 
-    public User(int userID, String name, LocalDate birthDate, int age, String phoneNumber, String email, String password) {
+    public User(int userID, String name, LocalDate birthDate, String phoneNumber, String email, String password) {
         this.userID = userID;
         this.name = name;
         this.birthDate = birthDate;

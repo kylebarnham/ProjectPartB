@@ -14,8 +14,8 @@ public class Employee extends User {
     
     private boolean staff;
 
-    public Employee(boolean staff, int userID, String name, LocalDate birthDate, int age, String phoneNumber, String email, String password) {
-        super(userID, name, birthDate, age, phoneNumber, email, password);
+    public Employee(int userID, String name, LocalDate birthDate, String phoneNumber, String email, String password, boolean staff) {
+        super(userID, name, birthDate, phoneNumber, email, password);
         this.staff = staff;
     }
 

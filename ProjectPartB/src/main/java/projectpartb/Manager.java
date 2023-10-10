@@ -14,8 +14,8 @@ public class Manager extends Employee {
     
     private boolean boss;
 
-    public Manager(boolean boss, boolean staff, int userID, String name, LocalDate birthDate, int age, String phoneNumber, String email, String password) {
-        super(staff, userID, name, birthDate, age, phoneNumber, email, password);
+    public Manager(int userID, String name, LocalDate birthDate, String phoneNumber, String email, String password, boolean staff, boolean boss) {
+        super(userID, name, birthDate, phoneNumber, email, password, staff);
         this.boss = boss;
     }
 
