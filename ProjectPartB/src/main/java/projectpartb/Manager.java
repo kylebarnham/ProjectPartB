@@ -12,23 +12,23 @@ import java.time.LocalDate;
  */
 public class Manager extends Employee {
     
-    private boolean manager;
+    private boolean boss;
 
-    public Manager(boolean manager, boolean staff, int userID, String name, LocalDate birthDate, int age, String phoneNumber, String email, String password) {
+    public Manager(boolean boss, boolean staff, int userID, String name, LocalDate birthDate, int age, String phoneNumber, String email, String password) {
         super(staff, userID, name, birthDate, age, phoneNumber, email, password);
-        this.manager = manager;
+        this.boss = boss;
     }
 
-    public boolean isManager() {
-        return manager;
+    public boolean isBoss() {
+        return boss;
     }
 
-    public void setManager(boolean manager) {
-        this.manager = manager;
+    public void setBoss(boolean boss) {
+        this.boss = boss;
     }
     
     @Override
     public String toString() {
-        return super.toString() + "," + isManager();
+        return super.toString() + "," + isBoss();
     }
 }
