@@ -13,7 +13,7 @@ public class Bus extends Vehicle {
     private int seats;
     private String busType;
 
-    public Bus(int seats, String busType, String rego, String make, String model, int year, String colour, int odometer, boolean manual, float costPerDay, boolean available) {
+    public Bus(String rego, String make, String model, int year, String colour, int odometer, boolean manual, float costPerDay, boolean available, int seats, String busType) {
         super(rego, make, model, year, colour, odometer, manual, costPerDay, available);
         this.seats = seats;
         this.busType = busType;

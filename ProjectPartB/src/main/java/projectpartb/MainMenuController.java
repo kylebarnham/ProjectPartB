@@ -10,26 +10,22 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
  * @author Kyle
  */
-public class EmployeeFindController implements Initializable {
+public class MainMenuController implements Initializable {
 
 
     @FXML
-    private Button backButton;
+    private Button customerButton;
     @FXML
-    private Button editButton;
+    private Button vehicleButton;
     @FXML
-    private TextField employeeIDField;
+    private Button rentalButton;
     @FXML
-    private TextArea textArea;
-    @FXML
-    private Button submitButton1;
+    private Button exitButton;
     /**
      * Initializes the controller class.
      */
@@ -39,15 +35,19 @@ public class EmployeeFindController implements Initializable {
     }    
     
     @FXML
-    private void backAction(ActionEvent event) {
+    private void customerAction(ActionEvent event) {
     }
 
     @FXML
-    private void editAction(ActionEvent event) {
+    private void vehicleAction(ActionEvent event) {
     }
 
     @FXML
-    private void submitAction(ActionEvent event) {
+    private void rentalAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void exitAction(ActionEvent event) {
     }
 
 }

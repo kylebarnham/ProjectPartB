@@ -11,12 +11,12 @@ package projectpartb;
 public class Car extends Vehicle {
     
     private String bodyType;
-    private int passengers;
+    private int passengersCar;
 
-    public Car(String bodyType, int passengers, String rego, String make, String model, int year, String colour, int odometer, boolean manual, float costPerDay, boolean available) {
+    public Car(String rego, String make, String model, int year, String colour, int odometer, boolean manual, float costPerDay, boolean available, String bodyType, int passengersCar) {
         super(rego, make, model, year, colour, odometer, manual, costPerDay, available);
         this.bodyType = bodyType;
-        this.passengers = passengers;
+        this.passengersCar = passengersCar;
     }
 
     public String getBodyType() {
@@ -27,17 +27,17 @@ public class Car extends Vehicle {
         this.bodyType = bodyType;
     }
 
-    public int getPassengers() {
-        return passengers;
+    public int getPassengersCar() {
+        return passengersCar;
     }
 
-    public void setPassengers(int passengers) {
-        this.passengers = passengers;
+    public void setPassengers(int passengersCar) {
+        this.passengersCar = passengersCar;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "," + getBodyType() + "," + getPassengers();
+        return super.toString() + "," + getBodyType() + "," + getPassengersCar();
     }
     
     

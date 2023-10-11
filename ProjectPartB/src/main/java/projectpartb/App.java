@@ -13,10 +13,7 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private static Scene login;
-    private static Scene custMain;
-    private static Scene empMain;
-    private static Scene managerMain;      
+    private static Scene mainMenu;     
     private static Scene custMenu;     
     private static Scene custAdd;     
     private static Scene custView;
@@ -32,24 +29,20 @@ public class App extends Application {
     private static Scene rentView;
     private static Scene rentFind;
     private static Scene rentDelete; 
-    private static Scene empMenu; 
-    private static Scene empAdd;     
-    private static Scene empView;
-    private static Scene empFind;
-    private static Scene empDelete;
     private static Stage stage;
-    private static DataHandler data;
+    private static CustomerDataHandler customerData;
+    private static VehicleDataHandler vehicleData;
+    private static RentalDataHandler rentalData;
 
     @Override
     public void start(Stage stage) throws IOException {
         //Instatiates the DataHandler object
-        data = new DataHandler("customers.txt");  
+        customerData = new CustomerDataHandler("customers.txt");  
+        vehicleData = new VehicleDataHandler("vehicle.txt");
+        rentalData = new RentalDataHandler("rental.txt");
         
         //Creates the Main and AddNumber scene 
-        Parent rootLogin = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Parent rootCustMain = FXMLLoader.load(getClass().getResource("customerMain.fxml"));
-        Parent rootEmpMain = FXMLLoader.load(getClass().getResource("employeeMain.fxml"));
-        Parent rootManagerMain = FXMLLoader.load(getClass().getResource("managerMain.fxml"));
+        Parent rootMainMenu = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
         Parent rootCustMenu = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootCustAdd = FXMLLoader.load(getClass().getResource("customerAdd.fxml"));
         Parent rootCustView = FXMLLoader.load(getClass().getResource("customerView.fxml"));
@@ -65,16 +58,8 @@ public class App extends Application {
         Parent rootRentView = FXMLLoader.load(getClass().getResource("rentalView.fxml"));
         Parent rootRentFind = FXMLLoader.load(getClass().getResource("rentalFind.fxml"));
         Parent rootRentDelete = FXMLLoader.load(getClass().getResource("rentalDelete.fxml"));
-        Parent rootEmpMenu = FXMLLoader.load(getClass().getResource("employeeMenu.fxml"));
-        Parent rootEmpAdd = FXMLLoader.load(getClass().getResource("employeeAdd.fxml"));
-        Parent rootEmpView = FXMLLoader.load(getClass().getResource("employeeView.fxml"));
-        Parent rootEmpFind = FXMLLoader.load(getClass().getResource("employeeFind.fxml"));
-        Parent rootEmpDelete = FXMLLoader.load(getClass().getResource("employeeDelete.fxml"));
         
-        login = new Scene(rootLogin);
-        custMain = new Scene(rootCustMain);
-        empMain = new Scene(rootEmpMain);
-        managerMain = new Scene(rootManagerMain);
+        mainMenu = new Scene(rootMainMenu);
         custMenu = new Scene(rootCustMenu);
         custAdd = new Scene(rootCustAdd);
         custView = new Scene(rootCustView);
@@ -89,18 +74,13 @@ public class App extends Application {
         rentAdd = new Scene(rootRentAdd);
         rentView = new Scene(rootRentView);
         rentFind = new Scene(rootRentFind);
-        rentDelete = new Scene(rootRentDelete);
-        empMenu = new Scene(rootEmpMenu);
-        empAdd = new Scene(rootEmpAdd);
-        empView = new Scene(rootEmpView);
-        empFind = new Scene(rootEmpFind);
-        empDelete = new Scene(rootEmpDelete);     
+        rentDelete = new Scene(rootRentDelete);    
         
         this.stage = stage;
         //set the current scene to the main scenen
         
         //scene = new Scene(loadFXML("mainMenu"), 640, 480);
-        stage.setScene(login);
+        stage.setScene(mainMenu);
         stage.show();
     }
 
@@ -114,30 +94,22 @@ public class App extends Application {
     public static void changeScene(int sc)
     {
         switch(sc) { 
-            case 0: stage.setScene(login); break;
-            case 1: stage.setScene(custMain); break;
-            case 2: stage.setScene(empMain); break;
-            case 3: stage.setScene(managerMain); break;
-            case 4: stage.setScene(custMenu); break;
-            case 5: stage.setScene(custAdd); break;
-            case 6: stage.setScene(custView); break;
-            case 7: stage.setScene(custFind); break;
-            case 8: stage.setScene(custDelete); break;
-            case 9: stage.setScene(vehicleMenu); break;
-            case 10: stage.setScene(vehicleAdd); break;
-            case 11: stage.setScene(vehicleView); break;
-            case 12: stage.setScene(vehicleFind); break;
-            case 13: stage.setScene(vehicleDelete); break;
-            case 14: stage.setScene(rentMenu); break;
-            case 15: stage.setScene(rentAdd); break;
-            case 16: stage.setScene(rentView); break;
-            case 17: stage.setScene(rentFind); break;
-            case 18: stage.setScene(rentDelete); break;
-            case 19: stage.setScene(empMenu); break;
-            case 20: stage.setScene(empAdd); break;
-            case 21: stage.setScene(empView); break;
-            case 22: stage.setScene(empFind); break;
-            case 23: stage.setScene(empDelete); break;
+            case 1: stage.setScene(mainMenu); break;
+            case 2: stage.setScene(custMenu); break;
+            case 3: stage.setScene(custAdd); break;
+            case 4: stage.setScene(custView); break;
+            case 5: stage.setScene(custFind); break;
+            case 6: stage.setScene(custDelete); break;
+            case 7: stage.setScene(vehicleMenu); break;
+            case 8: stage.setScene(vehicleAdd); break;
+            case 9: stage.setScene(vehicleView); break;
+            case 10: stage.setScene(vehicleFind); break;
+            case 11: stage.setScene(vehicleDelete); break;
+            case 12: stage.setScene(rentMenu); break;
+            case 13: stage.setScene(rentAdd); break;
+            case 14: stage.setScene(rentView); break;
+            case 15: stage.setScene(rentFind); break;
+            case 16: stage.setScene(rentDelete); break;
             default:
         } 
     }

@@ -10,21 +10,21 @@ package projectpartb;
  */
 public class Van extends Vehicle {
     
-    private int passengers;
+    private int passengersVan;
     private boolean wheelchairAccess;
 
-    public Van(int passengers, boolean wheelchairAccess, String rego, String make, String model, int year, String colour, int odometer, boolean manual, float costPerDay, boolean available) {
+    public Van(String rego, String make, String model, int year, String colour, int odometer, boolean manual, float costPerDay, boolean available, int passengersVan, boolean wheelchairAccess) {
         super(rego, make, model, year, colour, odometer, manual, costPerDay, available);
-        this.passengers = passengers;
+        this.passengersVan = passengersVan;
         this.wheelchairAccess = wheelchairAccess;
     }
 
-    public int getPassengers() {
-        return passengers;
+    public int getPassengersVan() {
+        return passengersVan;
     }
 
     public void setPassengers(int passengers) {
-        this.passengers = passengers;
+        this.passengersVan = passengers;
     }
 
     public boolean isWheelchairAccess() {
@@ -37,7 +37,7 @@ public class Van extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString() + "," + getPassengers() + "," + isWheelchairAccess();
+        return super.toString() + "," + getPassengersVan() + "," + isWheelchairAccess();
     }
     
     
