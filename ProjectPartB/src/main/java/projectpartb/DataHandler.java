@@ -19,12 +19,12 @@ import java.util.StringTokenizer;
 public class DataHandler {
     
     private String fileName;
-    private ArrayList<User> userList;
+    private ArrayList<Customer> customerList;
 
     public DataHandler(String fileName) throws FileNotFoundException {
         this.fileName = fileName;
         //initialise memberList ArrayList
-        this.userList = new ArrayList<User>();
+        this.customerList = new ArrayList<Customer>();
         //reading all saved members
         readDataFile();
     }
@@ -42,13 +42,9 @@ public class DataHandler {
             LocalDate birthDate = LocalDate.now();
             String phoneNumber = "";
             String email = "";
-            String password = "";
             int licenseNumber = 0;
             LocalDate licenseExpiry = LocalDate.now();
-            boolean manualLicense = false;
-            boolean staff = false;
-            boolean boss = false;
-                   
+            boolean manualLicense = false;         
 
             while (in.hasNextLine()) {
                 myEntry = in.nextLine();
@@ -60,36 +56,15 @@ public class DataHandler {
                     birthDate = LocalDate.parse(st.nextToken());
                     phoneNumber = st.nextToken();                                     
                     email = st.nextToken();
-                    password = st.nextToken();
                     licenseNumber = Integer.parseInt(st.nextToken());
                     licenseExpiry = LocalDate.parse(st.nextToken());
                     manualLicense = Boolean.parseBoolean(st.nextToken());
-                    staff = Boolean.parseBoolean(st.nextToken());
-                    boss = Boolean.parseBoolean(st.nextToken());
-                }
-                // Add member to the memberList ArrayList
-                if (staff & boss)  //keynote member
-                {
-                    //creates speaker object
-                    User manager = new Manager(userID, name, birthDate, phoneNumber, email, password, staff, boss);
-                    userList.add(manager);           
-                }
-                else if (staff & !boss)  //full member
-                { 
-                    //creates member object
-                    User employee = new Employee(userID, name, birthDate, phoneNumber, email, password, staff);
-                    //add member object to arraylist
-                    userList.add(employee);        
                 }
 
-                else   //student member
-                {
                     //creates student object
-                    User customer = new Customer(userID, name, birthDate, phoneNumber, email, password, licenseNumber, licenseExpiry, manualLicense);
+                    Customer c = new Customer(userID, name, birthDate, phoneNumber, email, licenseNumber, licenseExpiry, manualLicense);
                     //add student object to arraylist
-                    userList.add(customer);  
-                }             
-            
+                    customerList.add(c);  
             }// end of while loop
 
             in.close();//close file
@@ -108,14 +83,14 @@ public class DataHandler {
         {
             Formatter out = new Formatter(fileName);    //open file
        
-            int totalNumbers = userList.size();
+            int totalNumbers = customerList.size();
         
                
             for (int i = 0; i < totalNumbers; i++)
             {
-                User curUser = userList.get(i);
+                Customer curCustomer = customerList.get(i);
                 
-                out.format("%s\n", curUser.toString());
+                out.format("%s\n", curCustomer.toString());
             }            
             
 
@@ -129,8 +104,8 @@ public class DataHandler {
    }//end of the SaveData method 
     
   // Method for adding a member to the member ArrayList
-    public void addMember(User u)
+    public void addMember(Customer u)
     {
-        userList.add(u); 
+        customerList.add(u); 
     }
 }
