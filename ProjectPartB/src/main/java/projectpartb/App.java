@@ -85,11 +85,18 @@ public class App extends Application {
     }
 
     //Method for passing a reference to the data object
-    public static DataHandler getDataHandler()
+    public static CustomerDataHandler getCustomerDataHandler()
     {
-        return data;
+        return customerData;
     }  
-    
+    public static VehicleDataHandler getVehicleDataHandler()
+    {
+        return vehicleData;
+    }  
+    public static RentalDataHandler getRentalDataHandler()
+    {
+        return rentalData;
+    }  
     //Method for switching scenes
     public static void changeScene(int sc)
     {
