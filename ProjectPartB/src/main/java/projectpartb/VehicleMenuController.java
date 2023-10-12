@@ -10,13 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+
 /**
  * FXML Controller class
  *
  * @author Kyle
  */
 public class VehicleMenuController implements Initializable {
-
 
     @FXML
     private Button addButton;
@@ -28,6 +28,7 @@ public class VehicleMenuController implements Initializable {
     private Button exitButton;
     @FXML
     private Button deleteButton;
+
     /**
      * Initializes the controller class.
      */
@@ -35,7 +36,7 @@ public class VehicleMenuController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+
     @FXML
     private void addAction(ActionEvent event) {
     }
@@ -55,5 +56,5 @@ public class VehicleMenuController implements Initializable {
     @FXML
     private void deleteAction(ActionEvent event) {
     }
-
+    
 }

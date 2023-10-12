@@ -10,24 +10,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
  * @author Kyle
  */
-public class CustomerMainController implements Initializable {
+public class RentalDeleteController implements Initializable {
 
 
     @FXML
-    private Button createRentalButton;
+    private TextField regoVehicle;
     @FXML
-    private Button vehicleButton;
+    private Button searchButton;
     @FXML
-    private Button editButton;
+    private TextArea textArea;
     @FXML
-    private Button exitButton;
+    private Button deleteButton;
     @FXML
-    private Button checkRentalButton;
+    private Button backButton;
     /**
      * Initializes the controller class.
      */
@@ -37,23 +39,15 @@ public class CustomerMainController implements Initializable {
     }    
     
     @FXML
-    private void createRentalAction(ActionEvent event) {
+    private void searchAction(ActionEvent event) {
     }
 
     @FXML
-    private void seeVehiclesAction(ActionEvent event) {
+    private void deleteAction(ActionEvent event) {
     }
 
     @FXML
-    private void editAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void exitAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void checkRentalAction(ActionEvent event) {
+    private void backAction(ActionEvent event) {
     }
 
 }

@@ -10,22 +10,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
  * @author Kyle
  */
-public class LoginController implements Initializable {
+public class VehicleDeleteController implements Initializable {
 
 
     @FXML
-    private TextField userField;
+    private TextField regoVehicle;
     @FXML
-    private Button loginButton;
+    private Button searchButton;
     @FXML
-    private PasswordField passwordField;
+    private TextArea textArea;
+    @FXML
+    private Button deleteButton;
+    @FXML
+    private Button backButton;
     /**
      * Initializes the controller class.
      */
@@ -35,7 +39,15 @@ public class LoginController implements Initializable {
     }    
     
     @FXML
-    private void loginAction(ActionEvent event) {
+    private void searchAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void deleteAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void backAction(ActionEvent event) {
     }
 
 }

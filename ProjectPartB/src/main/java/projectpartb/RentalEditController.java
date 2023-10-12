@@ -10,24 +10,30 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
  * @author Kyle
  */
-public class ManagerMainController implements Initializable {
+public class RentalEditController implements Initializable {
 
 
     @FXML
-    private Button customerButton;
+    private Button backButton;
     @FXML
-    private Button vehicleButton;
+    private Button submitButton;
     @FXML
-    private Button rentalButton;
+    private TextField RentalIDField;
     @FXML
-    private Button exitButton;
+    private TextField CustomerIDField;
     @FXML
-    private Button empButton;
+    private TextField regoField;
+    @FXML
+    private DatePicker rentalStartDate;
+    @FXML
+    private DatePicker rentalEndDate;
     /**
      * Initializes the controller class.
      */
@@ -37,23 +43,11 @@ public class ManagerMainController implements Initializable {
     }    
     
     @FXML
-    private void customerAction(ActionEvent event) {
+    private void backAction(ActionEvent event) {
     }
 
     @FXML
-    private void vehicleAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void rentalAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void exitAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void empAction(ActionEvent event) {
+    private void submitAction(ActionEvent event) {
     }
 
 }

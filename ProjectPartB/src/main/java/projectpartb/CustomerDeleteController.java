@@ -10,37 +10,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
  * @author Kyle
  */
-public class CustomerAddController implements Initializable {
+public class CustomerDeleteController implements Initializable {
 
 
+    @FXML
+    private Button searchButton;
+    @FXML
+    private TextArea textArea;
+    @FXML
+    private Button deleteButton;
     @FXML
     private Button backButton;
     @FXML
-    private Button submitButton;
-    @FXML
-    private TextField customerIDField;
-    @FXML
-    private TextField nameField;
-    @FXML
-    private TextField phoneField;
-    @FXML
-    private TextField emailField;
-    @FXML
-    private TextField licenseNumberField;
-    @FXML
-    private DatePicker dobDate;
-    @FXML
-    private DatePicker licenseExpiryDate;
-    @FXML
-    private MenuButton manualLicenseMenu;
+    private TextField regoVehicle;
     /**
      * Initializes the controller class.
      */
@@ -50,11 +39,15 @@ public class CustomerAddController implements Initializable {
     }    
     
     @FXML
-    private void backAction(ActionEvent event) {
+    private void searchAction(ActionEvent event) {
     }
 
     @FXML
-    private void submitAction(ActionEvent event) {
+    private void deleteAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void backAction(ActionEvent event) {
     }
 
 }

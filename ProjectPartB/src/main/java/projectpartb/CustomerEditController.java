@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
  *
  * @author Kyle
  */
-public class CustomerAddController implements Initializable {
+public class CustomerEditController implements Initializable {
 
 
     @FXML
