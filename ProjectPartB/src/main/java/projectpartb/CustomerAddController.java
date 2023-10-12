@@ -89,14 +89,14 @@ public class CustomerAddController implements Initializable {
     //alert for member ID, phone number, registration fee and discount not being numeric
     public void numericErrorAlert()
     {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number and License are positive numbers");
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number and License are numeric");
         alert.show();
     }
     
     //alert if registration field is entered as a negative number
     public void positiveErrorAlert()
     {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Registration Fee must be a positive number");
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number and License are positive numbers");
         alert.show();
     }
     
@@ -109,30 +109,39 @@ public class CustomerAddController implements Initializable {
     
     @FXML
     private void backAction(ActionEvent event) {
+        clearFields();
         App.changeScene(1);
     }
 
     @FXML
-    private void submitAction(ActionEvent event) {            
+    private void submitAction(ActionEvent event) { 
+        //checks if any fields are blank
         if (!isBlank())
             blankErrorAlert();
+        //checks if customer, phone and license number field are numeric
         else if (!isNumeric(customerIDField.getText()) | !isNumeric(phoneField.getText()) | !isNumeric(licenseNumberField.getText()))
             numericErrorAlert();
+        //checks if member ID exists
         else if (App.getCustomerDataHandler().checkCustomerExists(Integer.parseInt(this.customerIDField.getText()))) {
             customerExistsErrorAlert();
             customerIDField.setText("");
         }
         else {
+            //check if manual license is selected
             boolean isManualLicense;
             if (manualLicense.isSelected())
                 isManualLicense = true;
             else
                 isManualLicense = false;
+            //set localdate for date of birth and license expiry
             LocalDate dob = this.dobDate.getValue();
             LocalDate licenseExpiry = this.licenseExpiryDate.getValue();
+            //creates customer object
             Customer c = new Customer(Integer.parseInt(this.customerIDField.getText()), this.nameField.getText(), dob, this.phoneField.getText(), this.emailField.getText(), Integer.parseInt(this.licenseNumberField.getText()), licenseExpiry, isManualLicense);
+            //adds customer object to arraylist
             App.getCustomerDataHandler().addCustomer(c);
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Customer has been added :\n" + c.appDisplay());
+            //alert to confirm customer details
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Customer has been added. Please confirm details :\n" + c.appDisplay());
             alert.show();
             clearFields();
         }
