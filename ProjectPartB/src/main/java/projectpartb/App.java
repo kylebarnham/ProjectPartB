@@ -96,7 +96,7 @@ public class App extends Application {
     public static RentalDataHandler getRentalDataHandler()
     {
         return rentalData;
-    }  
+    }
     //Method for switching scenes
     public static void changeScene(int sc)
     {
