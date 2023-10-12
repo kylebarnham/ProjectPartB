@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectpartb.VehicleAddController">
+  <tabs>
+    <Tab text="Car">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="odoFieldCar" layoutX="314.0" layoutY="124.0" prefWidth="216.0" promptText="Odometer" />
+                  <MenuButton fx:id="availableMenuCar" layoutX="314.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="216.0" text="Available?">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Yes" />
+                      <MenuItem mnemonicParsing="false" text="No" />
+                    </items>
+                  </MenuButton>
+                  <TextField fx:id="colourFieldCar" layoutX="70.0" layoutY="124.0" prefWidth="216.0" promptText="Colour" />
+                  <TextField fx:id="modelFieldCar" layoutX="70.0" layoutY="82.0" prefWidth="216.0" promptText="Model" />
+                  <TextField fx:id="regoFieldCar" layoutX="70.0" layoutY="40.0" prefWidth="216.0" promptText="Registration Number" />
+                  <TextField fx:id="typeFieldCar" layoutX="314.0" layoutY="166.0" prefWidth="216.0" promptText="Car Type" />
+                  <TextField fx:id="passengerFieldCar" layoutX="70.0" layoutY="208.0" prefWidth="216.0" promptText="Number of Passengers" />
+                  <TextField fx:id="yearFieldCar" layoutX="314.0" layoutY="82.0" prefWidth="216.0" promptText="Year" />
+                  <TextField fx:id="costFieldCar" layoutX="70.0" layoutY="166.0" prefWidth="216.0" promptText="Cost Per Day" />
+                  <TextField fx:id="manufacturerFieldCar" layoutX="314.0" layoutY="40.0" prefWidth="216.0" promptText="Manufacturer" />
+                  <Button fx:id="submitButtonCar" layoutX="496.0" layoutY="332.0" mnemonicParsing="false" onAction="#submitCar" prefWidth="90.0" text="Submit" />
+                  <Button fx:id="backButtonCar" layoutX="396.0" layoutY="332.0" mnemonicParsing="false" onAction="#backAction" prefWidth="90.0" text="Back" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Van">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="odoFieldVan" layoutX="314.0" layoutY="124.0" prefWidth="216.0" promptText="Odometer" />
+                  <MenuButton fx:id="availableMenuVan" layoutX="314.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="216.0" text="Available?">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Yes" />
+                        <MenuItem mnemonicParsing="false" text="No" />
+                     </items>
+                  </MenuButton>
+                  <TextField fx:id="colourFieldVan" layoutX="70.0" layoutY="124.0" prefWidth="216.0" promptText="Colour" />
+                  <TextField fx:id="manufacturerFieldVan" layoutX="314.0" layoutY="40.0" prefWidth="216.0" promptText="Manufacturer" />
+                  <TextField fx:id="regoFieldVan" layoutX="70.0" layoutY="40.0" prefWidth="216.0" promptText="Registration Number" />
+                  <TextField fx:id="passengerFieldVan" layoutX="314.0" layoutY="166.0" prefWidth="216.0" promptText="Number of Passengers" />
+                  <TextField fx:id="yearFieldVan" layoutX="314.0" layoutY="82.0" prefWidth="216.0" promptText="Year" />
+                  <TextField fx:id="costFieldVan" layoutX="70.0" layoutY="166.0" prefWidth="216.0" promptText="Cost Per Day" />
+                  <TextField fx:id="modelFieldVan" layoutX="70.0" layoutY="82.0" prefWidth="216.0" promptText="Model" />
+                  <Button fx:id="submitButtonVan" layoutX="496.0" layoutY="332.0" mnemonicParsing="false" onAction="#submitVan" prefWidth="90.0" text="Submit" />
+                  <Button fx:id="backButtonVan" layoutX="396.0" layoutY="332.0" mnemonicParsing="false" onAction="#backAction" prefWidth="90.0" text="Back" />
+                  <MenuButton fx:id="wheelchairMenu" layoutX="70.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="216.0" text="Wheelchair Access?">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Yes" />
+                        <MenuItem mnemonicParsing="false" text="No" />
+                     </items>
+                  </MenuButton>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Bus">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="odoFieldBus" layoutX="314.0" layoutY="124.0" prefWidth="216.0" promptText="Odometer" />
+                  <MenuButton fx:id="availableMenuBus" layoutX="314.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="216.0" text="Available?">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Yes" />
+                        <MenuItem mnemonicParsing="false" text="No" />
+                     </items>
+                  </MenuButton>
+                  <TextField fx:id="colourFieldBus" layoutX="70.0" layoutY="124.0" prefWidth="216.0" promptText="Colour" />
+                  <TextField fx:id="modelFieldBus" layoutX="70.0" layoutY="82.0" prefWidth="216.0" promptText="Model" />
+                  <TextField fx:id="regoFieldBus" layoutX="70.0" layoutY="40.0" prefWidth="216.0" promptText="Registration Number" />
+                  <TextField fx:id="passengerFieldBus" layoutX="70.0" layoutY="208.0" prefWidth="216.0" promptText="Number of Passengers" />
+                  <TextField fx:id="yearFieldBus" layoutX="314.0" layoutY="82.0" prefWidth="216.0" promptText="Year" />
+                  <TextField fx:id="costFieldBus" layoutX="70.0" layoutY="166.0" prefWidth="216.0" promptText="Cost Per Day" />
+                  <TextField fx:id="manufacturerFieldBus" layoutX="314.0" layoutY="40.0" prefWidth="216.0" promptText="Manufacturer" />
+                  <Button fx:id="submitButtonBus" layoutX="496.0" layoutY="332.0" mnemonicParsing="false" onAction="#submitBus" prefWidth="90.0" text="Submit" />
+                  <Button fx:id="backButtonBus" layoutX="396.0" layoutY="332.0" mnemonicParsing="false" onAction="#backAction" prefWidth="90.0" text="Back" />
+                  <TextField fx:id="typeFieldBus" layoutX="314.0" layoutY="166.0" prefWidth="216.0" promptText="Bus Type" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
