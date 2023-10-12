@@ -101,22 +101,22 @@ public class App extends Application {
     public static void changeScene(int sc)
     {
         switch(sc) { 
-            case 1: stage.setScene(mainMenu); break;
-            case 2: stage.setScene(custMenu); break;
-            case 3: stage.setScene(custAdd); break;
-            case 4: stage.setScene(custView); break;
-            case 5: stage.setScene(custFind); break;
-            case 6: stage.setScene(custDelete); break;
-            case 7: stage.setScene(vehicleMenu); break;
-            case 8: stage.setScene(vehicleAdd); break;
-            case 9: stage.setScene(vehicleView); break;
-            case 10: stage.setScene(vehicleFind); break;
-            case 11: stage.setScene(vehicleDelete); break;
-            case 12: stage.setScene(rentMenu); break;
-            case 13: stage.setScene(rentAdd); break;
-            case 14: stage.setScene(rentView); break;
-            case 15: stage.setScene(rentFind); break;
-            case 16: stage.setScene(rentDelete); break;
+            case 0: stage.setScene(mainMenu); break;
+            case 1: stage.setScene(custMenu); break;
+            case 2: stage.setScene(custAdd); break;
+            case 3: stage.setScene(custView); break;
+            case 4: stage.setScene(custFind); break;
+            case 5: stage.setScene(custDelete); break;
+            case 6: stage.setScene(vehicleMenu); break;
+            case 7: stage.setScene(vehicleAdd); break;
+            case 8: stage.setScene(vehicleView); break;
+            case 9: stage.setScene(vehicleFind); break;
+            case 10: stage.setScene(vehicleDelete); break;
+            case 11: stage.setScene(rentMenu); break;
+            case 12: stage.setScene(rentAdd); break;
+            case 13: stage.setScene(rentView); break;
+            case 14: stage.setScene(rentFind); break;
+            case 15: stage.setScene(rentDelete); break;
             default:
         } 
     }
