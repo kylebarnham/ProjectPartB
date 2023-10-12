@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectpartb.MainMenuController">
    <children>
-      <Button fx:id="customerButton" layoutX="219.0" layoutY="116.0" mnemonicParsing="false" onAction="#customerAction" prefHeight="43.0" prefWidth="163.0" text="Customers" />
-      <Button fx:id="vehicleButton" layoutX="219.0" layoutY="179.0" mnemonicParsing="false" onAction="#vehicleAction" prefHeight="43.0" prefWidth="163.0" text="Vehicles" />
-      <Button fx:id="rentalButton" layoutX="219.0" layoutY="242.0" mnemonicParsing="false" onAction="#rentalAction" prefHeight="43.0" prefWidth="163.0" text="Rentals" />
-      <Button fx:id="exitButton" layoutX="491.0" layoutY="356.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="25.0" prefWidth="90.0" text="Exit" />
+      <Button fx:id="customerButton" layoutX="219.0" layoutY="81.0" mnemonicParsing="false" onAction="#customerAction" prefHeight="43.0" prefWidth="163.0" text="Customers" />
+      <Button fx:id="vehicleButton" layoutX="219.0" layoutY="146.0" mnemonicParsing="false" onAction="#vehicleAction" prefHeight="43.0" prefWidth="163.0" text="Vehicles" />
+      <Button fx:id="rentalButton" layoutX="219.0" layoutY="211.0" mnemonicParsing="false" onAction="#rentalAction" prefHeight="43.0" prefWidth="163.0" text="Rentals" />
+      <Button fx:id="exitButton" layoutX="219.0" layoutY="276.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="43.0" prefWidth="163.0" text="Save and Exit" />
+      <Label layoutX="169.0" layoutY="14.0" text="Welcome to the Car Rental User System">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
