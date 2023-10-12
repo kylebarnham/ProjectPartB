@@ -38,22 +38,26 @@ public class RentalMenuController implements Initializable {
     
     @FXML
     private void createAction(ActionEvent event) {
+        App.changeScene(14);
     }
 
     @FXML
     private void viewAction(ActionEvent event) {
+        App.changeScene(15);
     }
 
     @FXML
     private void findAction(ActionEvent event) {
+        App.changeScene(16);
+    }
+    
+    @FXML
+    private void deleteAction(ActionEvent event) {
+        App.changeScene(18);
     }
 
     @FXML
     private void exitAction(ActionEvent event) {
+        App.changeScene(0);
     }
-
-    @FXML
-    private void deleteAction(ActionEvent event) {
-    }
-
 }

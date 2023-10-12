@@ -13,7 +13,7 @@
       <Button fx:id="editButton" layoutX="501.0" layoutY="366.0" mnemonicParsing="false" onAction="#editAction" prefHeight="25.0" prefWidth="90.0" text="Edit" />
       <TextField fx:id="customerIDField" layoutX="165.0" layoutY="56.0" prefHeight="25.0" prefWidth="165.0" promptText="Customer ID" />
       <TextArea fx:id="textArea" layoutX="29.0" layoutY="101.0" prefHeight="249.0" prefWidth="543.0" />
-      <Button fx:id="submitButton1" layoutX="346.0" layoutY="56.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="25.0" prefWidth="90.0" text="Submit" />
+      <Button fx:id="submitButton" layoutX="346.0" layoutY="56.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="25.0" prefWidth="90.0" text="Submit" />
       <Label layoutX="244.0" layoutY="14.0" text="Customer Search">
          <font>
             <Font size="15.0" />

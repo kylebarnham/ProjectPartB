@@ -100,5 +100,10 @@ public class Customer {
     public String toString() {
         return String.format(getUserID() + "," + getName() + "," + getBirthDate() + "," + getPhoneNumber() + "," + getEmail() + "," + getLicenseNumber() + "," + getLicenseExpiry() + "," + isManualLicense());
     }
+    
+    public String appDisplay() {
+        String result = manualLicense ? "Yes" : "No";
+        return String.format("Customer ID: " + getUserID() + "\nName: " + getName() + "\nDate of Birth: " + getBirthDate() + "\nPhone Number: " + getPhoneNumber() + "\nEmail: " + getEmail() + "\nLicense Number: " + getLicenseNumber() + "\nLicense Expiry: " + getLicenseExpiry() + "\nManual License: " + result);
+    }
 }
 

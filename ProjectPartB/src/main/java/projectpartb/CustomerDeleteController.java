@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -29,7 +30,7 @@ public class CustomerDeleteController implements Initializable {
     @FXML
     private Button backButton;
     @FXML
-    private TextField regoVehicle;
+    private TextField customerIDField;
     /**
      * Initializes the controller class.
      */
@@ -40,14 +41,25 @@ public class CustomerDeleteController implements Initializable {
     
     @FXML
     private void searchAction(ActionEvent event) {
+        int userID = Integer.parseInt(customerIDField.getText());
+        textArea.setText(App.getCustomerDataHandler().searchCustomer(userID));
     }
 
     @FXML
     private void deleteAction(ActionEvent event) {
+        int userID = Integer.parseInt(customerIDField.getText());
+        if (App.getCustomerDataHandler().checkCustomerExists(userID)) {    
+            App.getCustomerDataHandler().deleteCustomer(userID);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Customer will be deleted. Are you sure you want to continue?");
+            alert.show();
+            customerIDField.setText("");
+            textArea.setText("");
+        }
     }
 
     @FXML
     private void backAction(ActionEvent event) {
+        App.changeScene(1);
     }
 
 }

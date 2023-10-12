@@ -29,7 +29,7 @@ public class CustomerFindController implements Initializable {
     @FXML
     private TextArea textArea;
     @FXML
-    private Button submitButton1;
+    private Button submitButton;
     /**
      * Initializes the controller class.
      */
@@ -40,14 +40,18 @@ public class CustomerFindController implements Initializable {
     
     @FXML
     private void backAction(ActionEvent event) {
+        App.changeScene(1);
     }
 
     @FXML
     private void editAction(ActionEvent event) {
+        App.changeScene(5);
     }
 
     @FXML
     private void submitAction(ActionEvent event) {
+        int userID = Integer.parseInt(this.customerIDField.getText());
+        textArea.setText(App.getCustomerDataHandler().searchCustomer(userID));
     }
 
 }

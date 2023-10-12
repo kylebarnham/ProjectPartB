@@ -10,7 +10,7 @@
       <Button fx:id="addButton" layoutX="219.0" layoutY="81.0" mnemonicParsing="false" onAction="#addAction" prefHeight="43.0" prefWidth="163.0" text="Add New Vehicle" />
       <Button fx:id="viewButton" layoutX="219.0" layoutY="146.0" mnemonicParsing="false" onAction="#viewAction" prefHeight="43.0" prefWidth="163.0" text="View All Vehicles" />
       <Button fx:id="findButton" layoutX="219.0" layoutY="211.0" mnemonicParsing="false" onAction="#findAction" prefHeight="43.0" prefWidth="163.0" text="Find/Edit Vehicle" />
-      <Button fx:id="exitButton" layoutX="491.0" layoutY="356.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="25.0" prefWidth="90.0" text="Exit" />
+      <Button fx:id="exitButton" layoutX="491.0" layoutY="356.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="25.0" prefWidth="90.0" text="Back" />
       <Button fx:id="deleteButton" layoutX="219.0" layoutY="276.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="43.0" prefWidth="163.0" text="Delete Vehicle" />
       <Label layoutX="273.0" layoutY="14.0" text="Vehicles">
          <font>

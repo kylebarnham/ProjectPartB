@@ -6,10 +6,13 @@ package projectpartb;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 /**
  * FXML Controller class
  *
@@ -36,18 +39,31 @@ public class MainMenuController implements Initializable {
     
     @FXML
     private void customerAction(ActionEvent event) {
+        App.changeScene(1);
     }
 
     @FXML
     private void vehicleAction(ActionEvent event) {
+        App.changeScene(7);
     }
 
     @FXML
     private void rentalAction(ActionEvent event) {
+        App.changeScene(13);
     }
 
     @FXML
     private void exitAction(ActionEvent event) {
+        App.getCustomerDataHandler().saveData();
+        App.getVehicleDataHandler().saveData(); 
+        App.getRentalDataHandler().saveData(); 
+     
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to Close?");
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                Platform.exit();
+            }
+        });  
     }
 
 }

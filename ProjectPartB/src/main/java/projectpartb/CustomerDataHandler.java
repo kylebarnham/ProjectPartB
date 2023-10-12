@@ -108,4 +108,103 @@ public class CustomerDataHandler {
     {
         customerList.add(u); 
     }
+    
+    public void updateCustomer(int userID, Customer u)
+    {
+        int index = -1;
+        
+        int size = customerList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Customer findCustomer = customerList.get(i);
+            if(findCustomer.getUserID() == userID)
+                index = i;
+        }
+        customerList.set(index, u);             
+    }
+    
+        public void deleteCustomer(int userID)
+    {
+        int index = -1;
+        
+        int size = customerList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Customer findCustomer = customerList.get(i);
+            if(findCustomer.getUserID() == userID)
+                index = i;
+        }
+        customerList.remove(index);             
+    }
+    
+    public int findCustomerRecord(int userID) {
+        int index = -1;
+        
+        int size = customerList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Customer findCustomer = customerList.get(i);
+            if(findCustomer.getUserID() == userID)
+                index = i;
+        }
+        return index;
+    }
+    
+    public String searchCustomer(int userID) {
+        String searchCustomer = "";
+        int index = -1;
+        int size = customerList.size();
+        for(int i = 0; i < size; i++) {
+            Customer findCustomer = customerList.get(i);
+            if(findCustomer.getUserID() == userID)
+                index = i;
+        }
+        if(index > -1) {
+            customerList.get(index);
+            return searchCustomer + customerList.get(index).appDisplay();
+        }
+        else {
+            return searchCustomer + "No Customer record Found";
+        }
+    }
+    
+    public boolean checkCustomerExists(int userID) {
+        int index = -1;
+        int size = customerList.size();
+        for(int i = 0; i < size; i++) {
+            Customer findCustomer = customerList.get(i);
+            if(findCustomer.getUserID() == userID)
+                index = i;
+        }
+        if(index > -1)
+            return true;
+        else
+            return false;
+    }
+    
+    public String getDisplayOutput()
+    {  
+        //string to store final output
+        String output = "";
+        //to store all members in a single string
+        String listOfCustomers = "";
+         //get member list size
+        int size = customerList.size();
+        //if size is greater than 0 members found
+        if (size > 0)  { 
+            System.out.println("Members found!");
+            //for loop to get each element from member list
+            for (int i = 0; i < size; i++){
+                //add member details to string to string
+                listOfCustomers += customerList.get(i).appDisplay() + "\n\n";
+            }
+        //return string with member list and size
+        return output + listOfCustomers; 
+        }
+        else {
+            //return string with no members found
+            return output + "No Customers found";
+        }     
+    }     
+    
 }
