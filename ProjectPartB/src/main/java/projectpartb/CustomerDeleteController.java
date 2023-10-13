@@ -49,9 +49,9 @@ public class CustomerDeleteController implements Initializable {
     private void deleteAction(ActionEvent event) {
         int userID = Integer.parseInt(customerIDField.getText());
         if (App.getCustomerDataHandler().checkCustomerExists(userID)) {    
-            App.getCustomerDataHandler().deleteCustomer(userID);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Customer will be deleted. Are you sure you want to continue?");
             alert.show();
+            App.getCustomerDataHandler().deleteCustomer(userID);
             customerIDField.setText("");
             textArea.setText("");
         }

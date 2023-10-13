@@ -10,7 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextArea;
 /**
  * FXML Controller class
  *
@@ -22,23 +22,18 @@ public class VehicleViewController implements Initializable {
     @FXML
     private Button backButton;
     @FXML
-    private TableColumn<?, ?> idColumn;
-    @FXML
-    private TableColumn<?, ?> nameColumn;
-    @FXML
-    private TableColumn<?, ?> phoneColumn;
-    @FXML
-    private TableColumn<?, ?> emailColumn;
+    private TextArea textArea;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        textArea.setText(App.getVehicleDataHandler().getDisplayOutput());
     }    
     
     @FXML
     private void backAction(ActionEvent event) {
+        App.changeScene(7);
     }
 
 }

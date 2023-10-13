@@ -37,7 +37,7 @@ public class Car extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString() + "," + getBodyType() + "," + getPassengersCar();
+        return super.toString() + "," + getBodyType() + "," + getPassengersCar() + "," + 0 + "," + 0 + "," + 0 + "," + 0;
     }
     
     

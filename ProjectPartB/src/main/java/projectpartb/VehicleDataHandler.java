@@ -129,4 +129,101 @@ public class VehicleDataHandler {
     {
         vehicleList.add(v); 
     }
+    
+    public void updateVehicle(String rego, Vehicle v)
+    {
+        int index = -1;
+        
+        int size = vehicleList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Vehicle findVehicle = vehicleList.get(i);
+            if(findVehicle.getRego().equals(rego))
+                index = i;
+        }
+        vehicleList.set(index, v);             
+    }
+    
+    public void deleteVehicle(String rego)
+    {
+        int index = -1;
+        
+        int size = vehicleList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Vehicle findVehicle = vehicleList.get(i);
+            if(findVehicle.getRego().equals(rego))
+                index = i;
+        }
+        vehicleList.remove(index);             
+    }
+    
+    public int findVehicleRecord(String rego) {
+        int index = -1;
+        
+        int size = vehicleList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Vehicle findVehicle = vehicleList.get(i);
+            if(findVehicle.getRego().equals(rego))
+                index = i;
+        }
+        return index;
+    }
+    
+    public String searchVehicle(String rego) {
+        String searchVehicle = "";
+        int index = -1;
+        int size = vehicleList.size();
+        for(int i = 0; i < size; i++) {
+            Vehicle findVehicle = vehicleList.get(i);
+            if(findVehicle.getRego().equals(rego))
+                index = i;
+        }
+        if(index > -1) {
+            vehicleList.get(index);
+            return searchVehicle + vehicleList.get(index).appDisplay();
+        }
+        else {
+            return searchVehicle + "No Vehicle record Found";
+        }
+    }
+    
+    public boolean checkVehicleExists(String rego) {
+        int index = -1;
+        int size = vehicleList.size();
+        for(int i = 0; i < size; i++) {
+            Vehicle findVehicle = vehicleList.get(i);
+            if(findVehicle.getRego().equals(rego))
+                index = i;
+        }
+        if(index > -1)
+            return true;
+        else
+            return false;
+    }
+    
+    public String getDisplayOutput()
+    {  
+        //string to store final output
+        String output = "";
+        //to store all members in a single string
+        String listOfVehicles = "";
+         //get member list size
+        int size = vehicleList.size();
+        //if size is greater than 0 members found
+        if (size > 0)  { 
+            //for loop to get each element from member list
+            for (int i = 0; i < size; i++){
+                //add member details to string to string
+                listOfVehicles += vehicleList.get(i).appDisplay() + "\n\n";
+            }
+        //return string with member list and size
+        return output + listOfVehicles; 
+        }
+        else {
+            //return string with no members found
+            return output + "No Vehicles found";
+        }     
+    }  
 }

@@ -37,7 +37,7 @@ public class Bus extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString() + "," + getSeats() + "," + getBusType();
+        return super.toString() + "," + 0 + "," + 0 + "," + 0 + "," + 0 + "," + getSeats() + "," + getBusType();
     }
     
 }

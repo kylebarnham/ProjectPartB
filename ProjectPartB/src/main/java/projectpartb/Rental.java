@@ -13,14 +13,18 @@ import java.time.LocalDate;
 public class Rental {
         
     private int rentalID;
+    private int customerID;
+    private int rego;
     private LocalDate rentalStart;
     private LocalDate rentalEnd;
     private boolean returned;
     private boolean overdue;
     private float totalCost;
 
-    public Rental(int rentalID, LocalDate rentalStart, LocalDate rentalEnd, boolean returned, boolean overdue, float totalCost) {
+    public Rental(int rentalID, int customerID, int rego, LocalDate rentalStart, LocalDate rentalEnd, boolean returned, boolean overdue, float totalCost) {
         this.rentalID = rentalID;
+        this.customerID = customerID;
+        this.rego = rego;
         this.rentalStart = rentalStart;
         this.rentalEnd = rentalEnd;
         this.returned = returned;
@@ -34,6 +38,22 @@ public class Rental {
 
     public void setRentalID(int rentalID) {
         this.rentalID = rentalID;
+    }
+
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+
+    public int getRego() {
+        return rego;
+    }
+
+    public void setRego(int rego) {
+        this.rego = rego;
     }
 
     public LocalDate getRentalStart() {
@@ -78,7 +98,7 @@ public class Rental {
 
     @Override
     public String toString() {
-        return String.format(getRentalID() + "," + getRentalStart() + "," + getRentalEnd() + "," + isReturned() + "," + isOverdue() + "," + getTotalCost());
+        return String.format(getRentalID() + "," + getCustomerID() + "," + getRego() + "," + getRentalStart() + "," + getRentalEnd() + "," + isReturned() + "," + isOverdue() + "," + getTotalCost());
     }
     
     

@@ -37,6 +37,8 @@ public class RentalDataHandler {
             String myEntry = "";  //hold whole line text
             
             int rentalID = 0;
+            int customerID = 0;
+            int rego = 0;
             LocalDate rentalStart = LocalDate.now();
             LocalDate rentalEnd = LocalDate.now();
             boolean returned = false;
@@ -49,6 +51,8 @@ public class RentalDataHandler {
 
                 while (st.hasMoreTokens()) {                    
                     rentalID = Integer.parseInt(st.nextToken());
+                    customerID = Integer.parseInt(st.nextToken());
+                    rego = Integer.parseInt(st.nextToken());
                     rentalStart = LocalDate.parse(st.nextToken());
                     rentalEnd = LocalDate.parse(st.nextToken());
                     returned = Boolean.parseBoolean(st.nextToken());
@@ -57,7 +61,7 @@ public class RentalDataHandler {
                 }
 
                     //creates student object
-                    Rental r = new Rental(rentalID, rentalStart, rentalEnd, returned, overdue, totalCost);
+                    Rental r = new Rental(rentalID, customerID, rego, rentalStart, rentalEnd, returned, overdue, totalCost);
                     //add student object to arraylist
                     rentalList.add(r);  
             }// end of while loop

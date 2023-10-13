@@ -37,7 +37,7 @@ public class Van extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString() + "," + getPassengersVan() + "," + isWheelchairAccess();
+        return super.toString() + "," + 0 + "," + 0 + "," + getPassengersVan() + "," + isWheelchairAccess() + "," + 0 + "," + 0;
     }
     
     

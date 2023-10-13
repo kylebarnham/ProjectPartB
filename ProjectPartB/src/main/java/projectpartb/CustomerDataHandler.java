@@ -123,7 +123,7 @@ public class CustomerDataHandler {
         customerList.set(index, u);             
     }
     
-        public void deleteCustomer(int userID)
+    public void deleteCustomer(int userID)
     {
         int index = -1;
         

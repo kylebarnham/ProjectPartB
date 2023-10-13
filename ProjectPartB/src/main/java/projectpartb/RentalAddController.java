@@ -34,6 +34,8 @@ public class RentalAddController implements Initializable {
     private DatePicker rentalStartDate;
     @FXML
     private DatePicker rentalEndDate;
+    @FXML
+    private Button clearButton;
     /**
      * Initializes the controller class.
      */
@@ -48,6 +50,10 @@ public class RentalAddController implements Initializable {
 
     @FXML
     private void submitAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void clearAction(ActionEvent event) {
     }
 
 }
