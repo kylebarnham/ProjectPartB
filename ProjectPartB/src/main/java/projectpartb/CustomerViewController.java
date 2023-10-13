@@ -23,6 +23,8 @@ public class CustomerViewController implements Initializable {
     private Button backButton;
     @FXML
     private TextArea textArea;
+    @FXML
+    private Button updateButton;
     /**
      * Initializes the controller class.
      */
@@ -34,6 +36,11 @@ public class CustomerViewController implements Initializable {
     @FXML
     private void backAction(ActionEvent event) {
         App.changeScene(1);
+    }
+
+    @FXML
+    private void updateAction(ActionEvent event) {
+        textArea.setText(App.getCustomerDataHandler().getDisplayOutput());
     }
 
 }

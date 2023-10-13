@@ -24,6 +24,8 @@ public class RentalViewController implements Initializable {
     private Button backButton;
     @FXML
     private TextArea textArea;
+    @FXML
+    private Button updateButton;
     /**
      * Initializes the controller class.
      */
@@ -35,6 +37,12 @@ public class RentalViewController implements Initializable {
     @FXML
     private void backAction(ActionEvent event) {
         App.changeScene(13);
+    }
+
+    @FXML
+    private void updateAction(ActionEvent event) {
+        //updates textarea when update button is clicked
+        textArea.setText(App.getRentalDataHandler().getDisplayOutput());
     }
 
 }
