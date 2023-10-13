@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 public class CustomerAddController implements Initializable {
@@ -36,7 +37,7 @@ public class CustomerAddController implements Initializable {
     @FXML
     private DatePicker licenseExpiryDate;
     @FXML
-    private MenuButton manualLicenseMenu; // Use MenuButton for manual license
+    private RadioButton manualLicense;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -52,7 +53,7 @@ public class CustomerAddController implements Initializable {
         emailField.clear();
         licenseNumberField.clear();
         licenseExpiryDate.getEditor().clear();
-        manualLicenseMenu.setText("Manual License (Yes/No)"); // Reset the MenuButton
+        manualLicense.setSelected(false);
     }
 
     public boolean isBlank() {
@@ -99,7 +100,9 @@ public class CustomerAddController implements Initializable {
             customerExistsErrorAlert();
             customerIDField.setText("");
         } else {
-            boolean isManualLicense = manualLicenseMenu.getText().equals("Yes");
+            boolean isManualLicense = false;
+                if(manualLicense.isSelected())
+                    isManualLicense = false;
             LocalDate dob = dobDate.getValue();
             LocalDate licenseExpiry = licenseExpiryDate.getValue();
             Customer c = new Customer(
