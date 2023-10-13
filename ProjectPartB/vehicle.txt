@@ -1,0 +1,1 @@
+990RZN,Hyundai,Elantra,2011,146724,false,40.0,true,Sedan,5,0,0,0,0

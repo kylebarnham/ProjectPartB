@@ -23,17 +23,26 @@ public class VehicleViewController implements Initializable {
     private Button backButton;
     @FXML
     private TextArea textArea;
+    @FXML
+    private Button updateButton;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //displays all vehicle data when app is initialised
         textArea.setText(App.getVehicleDataHandler().getDisplayOutput());
     }    
     
     @FXML
     private void backAction(ActionEvent event) {
         App.changeScene(7);
+    }
+
+    @FXML
+    private void updateAction(ActionEvent event) {
+        //updates textarea when button is clicked
+        textArea.setText(App.getVehicleDataHandler().getDisplayOutput());
     }
 
 }

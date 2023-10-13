@@ -8,12 +8,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectpartb.RentalViewController">
    <children>
+      <Button fx:id="updateButton" layoutX="257.0" layoutY="361.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="25.0" prefWidth="90.0" text="Update" />
       <Button fx:id="backButton" layoutX="496.0" layoutY="361.0" mnemonicParsing="false" onAction="#backAction" prefHeight="25.0" prefWidth="90.0" text="Back" />
       <Label layoutX="248.0" layoutY="14.0" text="View All Rentals">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextArea fx:id="textArea" layoutX="29.0" layoutY="62.0" prefHeight="279.0" prefWidth="546.0" />
+      <TextArea fx:id="textArea" layoutX="29.0" layoutY="49.0" prefHeight="292.0" prefWidth="546.0" />
    </children>
 </AnchorPane>

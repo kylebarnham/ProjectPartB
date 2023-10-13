@@ -245,7 +245,7 @@ public class VehicleAddController implements Initializable {
 
     @FXML
     private void submitVan(ActionEvent event) {
-        if(!carIsBlank())
+        if(!vanIsBlank())
             blankErrorAlert();
         else if(!isNumeric(yearFieldVan.getText()) | !isNumeric(odoFieldVan.getText()) | !isNumeric(costFieldVan.getText()) | !isNumeric(passengerFieldVan.getText()))
             numericErrorAlert();
@@ -273,7 +273,7 @@ public class VehicleAddController implements Initializable {
 
     @FXML
     private void submitBus(ActionEvent event) {
-        if(!carIsBlank())
+        if(!busIsBlank())
             blankErrorAlert();
         else if(!isNumeric(yearFieldBus.getText()) | !isNumeric(odoFieldBus.getText()) | !isNumeric(costFieldBus.getText()) | !isNumeric(passengerFieldBus.getText()))
             numericErrorAlert();
