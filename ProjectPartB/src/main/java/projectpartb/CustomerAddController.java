@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package projectpartb;
 
 import java.net.URL;
@@ -13,15 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-/**
- * FXML Controller class
- *
- * @author Kyle
- */
-public class CustomerAddController implements Initializable {
 
+public class CustomerAddController implements Initializable {
 
     @FXML
     private Button backButton;
@@ -44,112 +36,85 @@ public class CustomerAddController implements Initializable {
     @FXML
     private DatePicker licenseExpiryDate;
     @FXML
-    private RadioButton manualLicense;
-    /**
-     * Initializes the controller class.
-     */
+    private MenuButton manualLicenseMenu; // Use MenuButton for manual license
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        // Initialize the controller
+    }
+
     public void clearFields() {
-        customerIDField.setText("");
-        nameField.setText("");
+        // Clear the fields
+        customerIDField.clear();
+        nameField.clear();
         dobDate.getEditor().clear();
-        phoneField.setText("");
-        emailField.setText("");
-        licenseNumberField.setText("");
+        phoneField.clear();
+        emailField.clear();
+        licenseNumberField.clear();
         licenseExpiryDate.getEditor().clear();
-        manualLicense.setSelected(false);
+        manualLicenseMenu.setText("Manual License (Yes/No)"); // Reset the MenuButton
     }
-    
+
     public boolean isBlank() {
-        if(customerIDField.getText().equals("") | nameField.getText().equals("") | phoneField.getText().equals("") | licenseNumberField.getText().equals(""))
-            return false;
-        else
-            return true; 
+        return customerIDField.getText().isEmpty() || nameField.getText().isEmpty() || phoneField.getText().isEmpty() || licenseNumberField.getText().isEmpty();
     }
-    
+
     public boolean isNumeric(String input) {
-        int check = Integer.parseInt(input);
-            if (check >= 0)
-                return true;
-            else
-                return false;
+        try {
+            int check = Integer.parseInt(input);
+            return check >= 0;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
-    
-    //alert for blank fields
-    public void blankErrorAlert()
-    {
+
+    public void blankErrorAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure all fields are completed");
         alert.show();
     }
-    
-    //alert for member ID, phone number, registration fee and discount not being numeric
-    public void numericErrorAlert()
-    {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number and License are numeric");
+
+    public void numericErrorAlert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number, and License are numeric");
         alert.show();
     }
-    
-    //alert if registration field is entered as a negative number
-    public void positiveErrorAlert()
-    {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number and License are positive numbers");
+
+    public void customerExistsErrorAlert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Customer with that Customer ID already exists");
         alert.show();
-    }
-    
-    //alert to let user know the member already exists
-    public void customerExistsErrorAlert()
-    {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Member with that Customer ID already exists");
-        alert.show();
-    }
-    
-    @FXML
-    private void backAction(ActionEvent event) {
-        clearFields();
-        App.changeScene(1);
     }
 
     @FXML
-    private void submitAction(ActionEvent event) { 
-        //checks if any fields are blank
+    private void backAction(ActionEvent event) {
+        clearFields();
+        App.changeScene(1); // Assuming 1 is the scene for the Customer menu
+    }
+
+    @FXML
+    private void submitAction(ActionEvent event) {
         if (!isBlank())
             blankErrorAlert();
-        //checks if customer, phone and license number field are numeric
-        else if (!isNumeric(customerIDField.getText()) | !isNumeric(phoneField.getText()) | !isNumeric(licenseNumberField.getText()))
+        else if (!isNumeric(customerIDField.getText()) || !isNumeric(phoneField.getText()) || !isNumeric(licenseNumberField.getText()))
             numericErrorAlert();
-        //checks if member ID exists
-        else if (App.getCustomerDataHandler().checkCustomerExists(Integer.parseInt(this.customerIDField.getText()))) {
+        else if (App.getCustomerDataHandler().checkCustomerExists(Integer.parseInt(customerIDField.getText()))) {
             customerExistsErrorAlert();
             customerIDField.setText("");
-        }
-        else {
-            //check if manual license is selected
-            boolean isManualLicense;
-            if (manualLicense.isSelected())
-                isManualLicense = true;
-            else
-                isManualLicense = false;
-            //set localdate for date of birth and license expiry
-            LocalDate dob = this.dobDate.getValue();
-            LocalDate licenseExpiry = this.licenseExpiryDate.getValue();
-            //creates customer object
-            Customer c = new Customer(Integer.parseInt(this.customerIDField.getText()), this.nameField.getText(), dob, this.phoneField.getText(), this.emailField.getText(), Integer.parseInt(this.licenseNumberField.getText()), licenseExpiry, isManualLicense);
-            //adds customer object to arraylist
+        } else {
+            boolean isManualLicense = manualLicenseMenu.getText().equals("Yes");
+            LocalDate dob = dobDate.getValue();
+            LocalDate licenseExpiry = licenseExpiryDate.getValue();
+            Customer c = new Customer(
+                    Integer.parseInt(customerIDField.getText()), nameField.getText(), dob, phoneField.getText(),
+                    emailField.getText(), Integer.parseInt(licenseNumberField.getText()), licenseExpiry, isManualLicense
+            );
             App.getCustomerDataHandler().addCustomer(c);
-            //alert to confirm customer details
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Customer has been added. Please confirm details :\n" + c.appDisplay());
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Customer has been added. Please confirm details:\n" + c.appDisplay());
             alert.show();
             clearFields();
         }
     }
-    
+
     @FXML
     private void clearAction(ActionEvent event) {
         clearFields();
     }
-
 }
