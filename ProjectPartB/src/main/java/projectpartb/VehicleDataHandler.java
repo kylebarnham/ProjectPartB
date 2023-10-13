@@ -74,11 +74,11 @@ public class VehicleDataHandler {
                     seats = Integer.parseInt(st.nextToken());
                     busType = st.nextToken();
                 }
-                    if(passengersCar < 0) {
+                    if(passengersCar > 0) {
                         Vehicle v = new Car(rego, make, model, year, colour, odometer, manual, costPerDay, available, bodyType, passengersCar);
                         vehicleList.add(v);
                     }
-                    else if(passengersVan < 0) {
+                    else if(passengersVan > 0) {
                         Vehicle v = new Van(rego, make, model, year, colour, odometer, manual, costPerDay, available, passengersVan, wheelchairAccess);
                         vehicleList.add(v);
                     }
