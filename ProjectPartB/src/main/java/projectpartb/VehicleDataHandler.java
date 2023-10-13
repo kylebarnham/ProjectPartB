@@ -203,8 +203,7 @@ public class VehicleDataHandler {
             return false;
     }
     
-    public String getDisplayOutput()
-    {  
+    public String getDisplayOutput() {  
         //string to store final output
         String output = "";
         //to store all members in a single string
@@ -226,4 +225,53 @@ public class VehicleDataHandler {
             return output + "No Vehicles found";
         }     
     }  
+    
+    //method to get total cost of rental
+    public float totalCost(String rego, int days) {
+        int index = -1;
+        float totalCost = 0;
+        int size = vehicleList.size();
+        for(int i = 0; i < size; i++) {
+            Vehicle findVehicle = vehicleList.get(i);
+            if(findVehicle.getRego().equals(rego))
+                index = i;
+        }
+        if(index < -1) {
+            return totalCost += vehicleList.get(index).getCostPerDay() * days;
+        } 
+        return index;
+    }
+    
+    //method to check if car is available
+    public boolean isVehicleAvailable(String rego) {
+        int index = -1;
+        
+        int size = vehicleList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Vehicle findVehicle = vehicleList.get(i);
+            if(findVehicle.getRego().equals(rego))
+                index = i;
+        }
+        if(vehicleList.get(index).isAvailable() == true)
+            return true;
+        else
+            return false;
+    }
+    
+    public boolean isVehicleManual(String rego) {
+        int index = -1;
+        
+        int size = vehicleList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Vehicle findVehicle = vehicleList.get(i);
+            if(findVehicle.getRego().equals(rego))
+                index = i;
+        }
+        if(vehicleList.get(index).isManual() == true)
+            return true;
+        else
+            return false;
+    }
 }

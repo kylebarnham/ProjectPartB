@@ -14,14 +14,14 @@ public class Rental {
         
     private int rentalID;
     private int customerID;
-    private int rego;
+    private String rego;
     private LocalDate rentalStart;
     private LocalDate rentalEnd;
     private boolean returned;
     private boolean overdue;
     private float totalCost;
 
-    public Rental(int rentalID, int customerID, int rego, LocalDate rentalStart, LocalDate rentalEnd, boolean returned, boolean overdue, float totalCost) {
+    public Rental(int rentalID, int customerID, String rego, LocalDate rentalStart, LocalDate rentalEnd, boolean returned, boolean overdue, float totalCost) {
         this.rentalID = rentalID;
         this.customerID = customerID;
         this.rego = rego;
@@ -48,11 +48,11 @@ public class Rental {
         this.customerID = customerID;
     }
 
-    public int getRego() {
+    public String getRego() {
         return rego;
     }
 
-    public void setRego(int rego) {
+    public void setRego(String rego) {
         this.rego = rego;
     }
 
@@ -101,5 +101,9 @@ public class Rental {
         return String.format(getRentalID() + "," + getCustomerID() + "," + getRego() + "," + getRentalStart() + "," + getRentalEnd() + "," + isReturned() + "," + isOverdue() + "," + getTotalCost());
     }
     
-    
+    public String appDisplay() {
+        String result1 = returned ? "Yes" : "No";
+        String result2 = overdue ? "Yes" : "No";
+        return String.format("Rental ID: " + getRentalID() + "\nCustomer ID" + getCustomerID() + "\nRegistration Number: " + getRego() + "\nRental Start: " + getRentalStart() + "\nRental End: " + getRentalEnd() + "\nReturned: " + isReturned() + "\nOverdue: " + isOverdue() + "Total Cost: $" + getTotalCost());
+    }
 }

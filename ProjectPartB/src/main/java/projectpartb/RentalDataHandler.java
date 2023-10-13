@@ -22,13 +22,13 @@ public class RentalDataHandler {
 
     public RentalDataHandler(String fileName) throws FileNotFoundException {
         this.fileName = fileName;
-        //initialise memberList ArrayList
+        //initialise rentalList ArrayList
         this.rentalList = new ArrayList<Rental>();
-        //reading all saved members
+        //reading all saved rentals
         readDataFile();
     }
     //Private method for reading all saved members from the text file 
-    //and uploading to the memberList ArrayList
+    //and uploading to the rentalList ArrayList
     //Not accessible to the external classes
     private void readDataFile() throws FileNotFoundException
     {
@@ -38,7 +38,7 @@ public class RentalDataHandler {
             
             int rentalID = 0;
             int customerID = 0;
-            int rego = 0;
+            String rego = "";
             LocalDate rentalStart = LocalDate.now();
             LocalDate rentalEnd = LocalDate.now();
             boolean returned = false;
@@ -52,7 +52,7 @@ public class RentalDataHandler {
                 while (st.hasMoreTokens()) {                    
                     rentalID = Integer.parseInt(st.nextToken());
                     customerID = Integer.parseInt(st.nextToken());
-                    rego = Integer.parseInt(st.nextToken());
+                    rego = st.nextToken();
                     rentalStart = LocalDate.parse(st.nextToken());
                     rentalEnd = LocalDate.parse(st.nextToken());
                     returned = Boolean.parseBoolean(st.nextToken());
@@ -102,9 +102,106 @@ public class RentalDataHandler {
 
    }//end of the SaveData method 
     
-  // Method for adding a member to the member ArrayList
+  // Method for adding a rental to the rental ArrayList
     public void addRental(Rental r)
     {
         rentalList.add(r); 
+    }
+    //method for updating a rental in the arraylist
+    public void updateRental(int rentalID, Rental r)
+    {
+        int index = -1;
+        
+        int size = rentalList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Rental findRental = rentalList.get(i);
+            if(findRental.getRentalID() == rentalID)
+                index = i;
+        }
+        rentalList.set(index, r);             
+    }
+    //method for deleting a rental from the arraylist
+    public void deleteRental(int rentalID)
+    {
+        int index = -1;
+        
+        int size = rentalList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Rental findRental = rentalList.get(i);
+            if(findRental.getRentalID() == rentalID)
+                index = i;
+        }
+        rentalList.remove(index);             
+    }
+    //int to find rental record
+    public int findRentalRecord(int rentalID) {
+        int index = -1;
+        
+        int size = rentalList.size();
+        
+        for(int i = 0; i < size; i++) {
+            Rental findRental = rentalList.get(i);
+            if(findRental.getRentalID() == rentalID)
+                index = i;
+        }
+        return index;
+    }
+    //string to display searched rental details
+    public String searchRental(int rentalID) {
+        String searchRental = "";
+        int index = -1;
+        int size = rentalList.size();
+        for(int i = 0; i < size; i++) {
+            Rental findRental = rentalList.get(i);
+            if(findRental.getRentalID() == rentalID)
+                index = i;
+        }
+        if(index > -1) {
+            rentalList.get(index);
+            return searchRental + rentalList.get(index).appDisplay();
+        }
+        else {
+            return searchRental + "No Rental record Found";
+        }
+    }
+    //boolean to check if rental ID exists
+    public boolean checkRentalExists(int rentalID) {
+        int index = -1;
+        int size = rentalList.size();
+        for(int i = 0; i < size; i++) {
+            Rental findRental = rentalList.get(i);
+            if(findRental.getRentalID() == rentalID)
+                index = i;
+        }
+        if(index > -1)
+            return true;
+        else
+            return false;
+    }
+    //string to display all rental 
+    public String getDisplayOutput()
+    {  
+        //string to store final output
+        String output = "";
+        //to store all rentals in a single string
+        String listOfRentals = "";
+         //get rental list size
+        int size = rentalList.size();
+        //if size is greater than 0 rentals found
+        if (size > 0)  { 
+            //for loop to get each element from rental list
+            for (int i = 0; i < size; i++){
+                //add rental details to string to string
+                listOfRentals += rentalList.get(i).appDisplay() + "\n\n";
+            }
+        //return string with rental list and size
+        return output + listOfRentals; 
+        }
+        else {
+            //return string with no rental found
+            return output + "No Customers found";
+        }     
     }
 }

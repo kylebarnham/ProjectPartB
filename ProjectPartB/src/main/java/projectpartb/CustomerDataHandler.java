@@ -207,4 +207,17 @@ public class CustomerDataHandler {
         }     
     }     
     
+    public boolean checkManualLicense(int userID) {
+        int index = -1;
+        int size = customerList.size();
+        for(int i = 0; i < size; i++) {
+            Customer findCustomer = customerList.get(i);
+            if(findCustomer.getUserID() == userID)
+                index = i;
+        }
+        if(customerList.get(index).isManualLicense() == true)
+            return true;
+        else
+            return false;
+    }
 }
