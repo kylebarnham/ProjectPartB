@@ -108,6 +108,6 @@ public class Rental {
     public String appDisplay() {
         String result1 = returned ? "Yes" : "No";
         String result2 = overdue ? "Yes" : "No";
-        return String.format("Rental ID: " + getRentalID() + "\nCustomer ID" + getCustomerID() + "\nRegistration Number: " + getRego() + "\nRental Start: " + getRentalStart() + "\nRental End: " + getRentalEnd() + "\nReturned: " + isReturned() + "\nOverdue: " + isOverdue() + "Total Cost: $" + getTotalCost());
+        return String.format("Rental ID: " + getRentalID() + "\nCustomer ID: " + getCustomerID() + "\nRegistration Number: " + getRego() + "\nRental Start: " + getRentalStart() + "\nRental End: " + getRentalEnd() + "\nReturned: " + isReturned() + "\nOverdue: " + isOverdue() + "\nTotal Cost: $" + getTotalCost());
     }
 }

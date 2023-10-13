@@ -263,7 +263,7 @@ public class VehicleAddController implements Initializable {
                 available = true;
             if(wheelchairRadio.isSelected())
                 wheelchair = true;
-            Vehicle v = new Van(regoFieldVan.getText(), manufacturerFieldVan.getText(), modelFieldVan.getText(), Integer.parseInt(yearFieldVan.getText()), colourFieldVan.getText(), Integer.parseInt(odoFieldVan.getText()), manual, Float.parseFloat(costFieldVan.getText()), available, Integer.parseInt(passengerFieldCar.getText()), wheelchair);
+            Vehicle v = new Van(regoFieldVan.getText(), manufacturerFieldVan.getText(), modelFieldVan.getText(), Integer.parseInt(yearFieldVan.getText()), colourFieldVan.getText(), Integer.parseInt(odoFieldVan.getText()), manual, Float.parseFloat(costFieldVan.getText()), available, Integer.parseInt(passengerFieldVan.getText()), wheelchair);
             App.getVehicleDataHandler().addVehicle(v);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Vehicle has been added. Please confirm details :\n" + v.appDisplay());
             alert.show();

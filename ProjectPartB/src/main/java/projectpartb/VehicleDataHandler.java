@@ -229,6 +229,7 @@ public class VehicleDataHandler {
     //method to get total cost of rental
     public float totalCost(String rego, int days) {
         int index = -1;
+        float costOfVehicle = 0;
         float totalCost = 0;
         int size = vehicleList.size();
         for(int i = 0; i < size; i++) {
@@ -237,9 +238,9 @@ public class VehicleDataHandler {
                 index = i;
         }
         if(index < -1) {
-            return totalCost += vehicleList.get(index).getCostPerDay() * days;
+            costOfVehicle += vehicleList.get(index).getCostPerDay() * days;
         } 
-        return index;
+        return totalCost + costOfVehicle;
     }
     
     //method to check if car is available

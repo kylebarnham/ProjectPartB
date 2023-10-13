@@ -109,13 +109,13 @@ public class Vehicle {
     //toString to format data for vehicles.txt
     @Override
     public String toString() {
-        return String.format(getRego() + "," + getMake() + "," + getModel() + "," + getYear()  + "," + getOdometer() + "," + isManual()  + "," + getCostPerDay() + "," + isAvailable());
+        return String.format(getRego() + "," + getMake() + "," + getModel() + "," + getYear()  + "," + getColour()  + "," + getOdometer() + "," + isManual()  + "," + getCostPerDay() + "," + isAvailable());
     }
     
     //string method to format data for app
     public String appDisplay() {
         String result1 = manual ? "Yes" : "No";
         String result2 = available ? "Yes" : "No";
-        return String.format("Registration: " + getRego() + "\nMake: " + getMake() + "\nModel: " + getModel() + "\nYear: " + getYear() + "\nOdometer: " + getOdometer() + "\nManual: " + result1 + "\nCost per Day: " + getCostPerDay() + "\nAvailable: " + result2);
+        return String.format("Registration: " + getRego() + "\nMake: " + getMake() + "\nModel: " + getModel() + "\nYear: " + getYear() + "\nColour: " + getColour() + "\nOdometer: " + getOdometer() + "\nManual: " + result1 + "\nCost per Day: " + getCostPerDay() + "\nAvailable: " + result2);
     }
 }

@@ -1,1 +1,3 @@
-990RZN,Hyundai,Elantra,2011,146724,false,40.0,true,Sedan,5,0,0,0,0
+990RNZ,Hyundai,Elantra,2011,Silver,146000,false,40.0,true,0,0,0,0,0,0
+888NNN,Toyota,Hiace,2020,White,146000,false,80.0,true,0,0,0,0,0,0
+444EEE,Mercedes,Bus,2022,Black,43000,false,115.0,false,0,0,0,0,0,0

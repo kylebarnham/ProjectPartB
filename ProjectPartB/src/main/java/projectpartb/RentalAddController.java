@@ -165,14 +165,14 @@ public class RentalAddController implements Initializable {
             regoField.setText("");
         }
         //check if can drive the vehicle
-        else if (canDrive(Integer.parseInt(customerIDField.getText()), regoField.getText())) {
+        else if (!canDrive(Integer.parseInt(customerIDField.getText()), regoField.getText())) {
             cantDriveErrorAlert();
             regoField.setText("");
         }
         else {
             //set localdates
             LocalDate start = rentalStartDate.getValue();
-            LocalDate end = rentalStartDate.getValue();
+            LocalDate end = rentalEndDate.getValue();
             LocalDate today = LocalDate.now();
             //calculate days between start and end date
             int days = (int) ChronoUnit.DAYS.between(start, end);

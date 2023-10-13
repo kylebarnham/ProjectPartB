@@ -118,7 +118,7 @@ public class RentalEditController implements Initializable {
     //alert to let user know the member already exists
     public void rentalExistsErrorAlert()
     {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Rental with that ID already exists");
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Rental ID doesn't exist");
         alert.show();
     }
     //error message if customer doesn't exist
@@ -165,7 +165,7 @@ public class RentalEditController implements Initializable {
         else if (!isPositive(rentalIDField.getText()) | !isPositive(customerIDField.getText()))
             positiveErrorAlert();
         //check if rental id exists
-        else if (App.getRentalDataHandler().checkRentalExists(Integer.parseInt(rentalIDField.getText()))) {
+        else if (!App.getRentalDataHandler().checkRentalExists(Integer.parseInt(rentalIDField.getText()))) {
             rentalExistsErrorAlert();
             rentalIDField.setText("");
         }
@@ -192,7 +192,7 @@ public class RentalEditController implements Initializable {
         else {
             //set localdates
             LocalDate start = rentalStartDate.getValue();
-            LocalDate end = rentalStartDate.getValue();
+            LocalDate end = rentalEndDate.getValue();
             LocalDate today = LocalDate.now();
             //calculate days between start and end date
             int days = (int) ChronoUnit.DAYS.between(start, end);
@@ -215,7 +215,7 @@ public class RentalEditController implements Initializable {
             //add rental object to DataHandler
             App.getRentalDataHandler().updateRental(Integer.parseInt(rentalIDField.getText()), r);
             //display alert with customer details
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Rental has been added. Please confirm details :\n" + r.appDisplay());
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Rental has been updated. Please confirm details :\n" + r.appDisplay());
             alert.show();
             clearFields();
         }
@@ -228,6 +228,7 @@ public class RentalEditController implements Initializable {
     
     @FXML
     private void backAction(ActionEvent event) {
+        App.changeScene(13);
     }
 
 }
