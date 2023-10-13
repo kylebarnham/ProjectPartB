@@ -57,7 +57,10 @@ public class CustomerAddController implements Initializable {
     }
 
     public boolean isBlank() {
-        return customerIDField.getText().isEmpty() || nameField.getText().isEmpty() || phoneField.getText().isEmpty() || licenseNumberField.getText().isEmpty();
+        if (customerIDField.getText().isEmpty() || nameField.getText().isEmpty() || phoneField.getText().isEmpty() || licenseNumberField.getText().isEmpty())
+            return true;
+        else
+            return false;
     }
 
     public boolean isNumeric(String input) {
@@ -92,7 +95,7 @@ public class CustomerAddController implements Initializable {
 
     @FXML
     private void submitAction(ActionEvent event) {
-        if (!isBlank())
+        if (isBlank())
             blankErrorAlert();
         else if (!isNumeric(customerIDField.getText()) || !isNumeric(phoneField.getText()) || !isNumeric(licenseNumberField.getText()))
             numericErrorAlert();
