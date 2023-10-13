@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 /**
@@ -49,12 +50,15 @@ public class CustomerDeleteController implements Initializable {
     private void deleteAction(ActionEvent event) {
         int userID = Integer.parseInt(customerIDField.getText());
         if (App.getCustomerDataHandler().checkCustomerExists(userID)) {    
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Customer will be deleted. Are you sure you want to continue?");
-            alert.show();
-            App.getCustomerDataHandler().deleteCustomer(userID);
-            customerIDField.setText("");
-            textArea.setText("");
-        }
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want delete this customer?");
+                alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    App.getCustomerDataHandler().deleteCustomer(userID);
+                    customerIDField.setText("");
+                    textArea.setText("");
+                }
+            }
+        );}
     }
 
     @FXML

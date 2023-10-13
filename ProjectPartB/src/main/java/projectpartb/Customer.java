@@ -21,6 +21,7 @@ public class Customer {
     private LocalDate licenseExpiry;
     private boolean manualLicense;
 
+    //constructor
     public Customer(int userID, String name, LocalDate birthDate, String phoneNumber, String email, int licenseNumber, LocalDate licenseExpiry, boolean manualLicense) {
         this.userID = userID;
         this.name = name;
@@ -32,6 +33,7 @@ public class Customer {
         this.manualLicense = manualLicense;
     }
 
+    //getters and setters
     public int getUserID() {
         return userID;
     }
@@ -96,11 +98,13 @@ public class Customer {
         this.manualLicense = manualLicense;
     }
     
+    //toString method to format data for customers.txt
     @Override
     public String toString() {
         return String.format(getUserID() + "," + getName() + "," + getBirthDate() + "," + getPhoneNumber() + "," + getEmail() + "," + getLicenseNumber() + "," + getLicenseExpiry() + "," + isManualLicense());
     }
     
+    //appdisplay string to format data for app
     public String appDisplay() {
         String result = manualLicense ? "Yes" : "No";
         return String.format("Customer ID: " + getUserID() + "\nName: " + getName() + "\nDate of Birth: " + getBirthDate() + "\nPhone Number: " + getPhoneNumber() + "\nEmail: " + getEmail() + "\nLicense Number: " + getLicenseNumber() + "\nLicense Expiry: " + getLicenseExpiry() + "\nManual License: " + result);

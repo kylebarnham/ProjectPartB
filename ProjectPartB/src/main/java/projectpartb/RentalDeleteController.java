@@ -9,7 +9,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 /**
@@ -21,8 +23,6 @@ public class RentalDeleteController implements Initializable {
 
 
     @FXML
-    private TextField regoVehicle;
-    @FXML
     private Button searchButton;
     @FXML
     private TextArea textArea;
@@ -30,6 +30,8 @@ public class RentalDeleteController implements Initializable {
     private Button deleteButton;
     @FXML
     private Button backButton;
+    @FXML
+    private TextField rentalIDField;
     /**
      * Initializes the controller class.
      */
@@ -40,14 +42,32 @@ public class RentalDeleteController implements Initializable {
     
     @FXML
     private void searchAction(ActionEvent event) {
+        int rentalID = Integer.parseInt(rentalIDField.getText());
+        //uses search rental method from datahandler
+        textArea.setText(App.getRentalDataHandler().searchRental(rentalID));
     }
 
     @FXML
     private void deleteAction(ActionEvent event) {
+        int rentalID = Integer.parseInt(rentalIDField.getText());
+        //checks if rental ID exists
+        if (App.getRentalDataHandler().checkRentalExists(rentalID)) {    
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Rental will be deleted. Are you sure you want to continue?");
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                //deletes record from arraylist in datahandler 
+                App.getRentalDataHandler().deleteRental(rentalID);
+                rentalIDField.setText("");
+                textArea.setText("");
+                }
+            });
+        }
     }
 
     @FXML
     private void backAction(ActionEvent event) {
+        //change scene to rentalMenu
+        App.changeScene(13);
     }
 
 }

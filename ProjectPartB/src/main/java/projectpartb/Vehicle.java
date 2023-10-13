@@ -20,6 +20,7 @@ public class Vehicle {
     private float costPerDay;
     private boolean available;
 
+    //constructor
     public Vehicle(String rego, String make, String model, int year, String colour, int odometer, boolean manual, float costPerDay, boolean available) {
         this.rego = rego;
         this.make = make;
@@ -32,6 +33,7 @@ public class Vehicle {
         this.available = available;
     }
 
+    //getters and setters
     public String getRego() {
         return rego;
     }
@@ -104,11 +106,13 @@ public class Vehicle {
         this.available = available;
     }
 
+    //toString to format data for vehicles.txt
     @Override
     public String toString() {
         return String.format(getRego() + "," + getMake() + "," + getModel() + "," + getYear()  + "," + getOdometer() + "," + isManual()  + "," + getCostPerDay() + "," + isAvailable());
     }
     
+    //string method to format data for app
     public String appDisplay() {
         String result1 = manual ? "Yes" : "No";
         String result2 = available ? "Yes" : "No";

@@ -48,7 +48,7 @@ public class RentalMenuController implements Initializable {
 
     @FXML
     private void findAction(ActionEvent event) {
-        App.changeScene(16);
+        App.changeScene(17);
     }
     
     @FXML

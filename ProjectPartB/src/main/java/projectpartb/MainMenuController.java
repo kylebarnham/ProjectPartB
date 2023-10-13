@@ -39,25 +39,30 @@ public class MainMenuController implements Initializable {
     
     @FXML
     private void customerAction(ActionEvent event) {
+        //change scene to customer main
         App.changeScene(1);
     }
 
     @FXML
     private void vehicleAction(ActionEvent event) {
+        //change scene to vehicle main
         App.changeScene(7);
     }
 
     @FXML
     private void rentalAction(ActionEvent event) {
+        //change scene to rental main
         App.changeScene(13);
     }
 
     @FXML
     private void exitAction(ActionEvent event) {
+        //saves all data to datahandlers
         App.getCustomerDataHandler().saveData();
         App.getVehicleDataHandler().saveData(); 
         App.getRentalDataHandler().saveData(); 
      
+        //confirmation alert
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to Close?");
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {

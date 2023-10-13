@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextArea;
 /**
  * FXML Controller class
  *
@@ -22,29 +23,18 @@ public class RentalViewController implements Initializable {
     @FXML
     private Button backButton;
     @FXML
-    private TableColumn<?, ?> rentalColumn;
-    @FXML
-    private TableColumn<?, ?> customerColumn;
-    @FXML
-    private TableColumn<?, ?> regoColumn;
-    @FXML
-    private TableColumn<?, ?> startColumn;
-    @FXML
-    private TableColumn<?, ?> endColumn;
-    @FXML
-    private TableColumn<?, ?> returnedColumn;
-    @FXML
-    private TableColumn<?, ?> overdueColumn;
+    private TextArea textArea;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        textArea.setText(App.getRentalDataHandler().getDisplayOutput());
     }    
     
     @FXML
     private void backAction(ActionEvent event) {
+        App.changeScene(13);
     }
 
 }

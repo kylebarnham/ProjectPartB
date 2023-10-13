@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 /**
@@ -42,23 +43,30 @@ public class VehicleDeleteController implements Initializable {
     @FXML
     private void searchAction(ActionEvent event) {
         String rego = regoVehicle.getText();
+        //gets search vehicle method from datahandler to display vehicle details
         textArea.setText(App.getVehicleDataHandler().searchVehicle(rego));
     }
 
     @FXML
     private void deleteAction(ActionEvent event) {
         String rego = regoVehicle.getText();
-        if (App.getVehicleDataHandler().checkVehicleExists(rego)) {    
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Customer will be deleted. Are you sure you want to continue?");
-            alert.show();
-            App.getVehicleDataHandler().deleteVehicle(rego);
-            regoVehicle.setText("");
-            textArea.setText("");
+        //checks if vehicle rego exists
+        if (App.getVehicleDataHandler().checkVehicleExists(rego)) { 
+            //confirmation alert to make sure user wants to delete record
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Vehicle will be deleted. Do you want to continue?");
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    App.getVehicleDataHandler().deleteVehicle(rego);
+                    regoVehicle.setText("");
+                    textArea.setText("");
+                }
+            });
         }
     }
 
     @FXML
     private void backAction(ActionEvent event) {
+        //changes scene to vehicle main
         App.changeScene(7);
     }
 }

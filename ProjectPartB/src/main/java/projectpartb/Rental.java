@@ -21,6 +21,7 @@ public class Rental {
     private boolean overdue;
     private float totalCost;
 
+    //constructor
     public Rental(int rentalID, int customerID, String rego, LocalDate rentalStart, LocalDate rentalEnd, boolean returned, boolean overdue, float totalCost) {
         this.rentalID = rentalID;
         this.customerID = customerID;
@@ -32,6 +33,7 @@ public class Rental {
         this.totalCost = totalCost;
     }
 
+    //getters and setters
     public int getRentalID() {
         return rentalID;
     }
@@ -96,11 +98,13 @@ public class Rental {
         this.totalCost = totalCost;
     }
 
+    //toString used to format data for rentals.txt
     @Override
     public String toString() {
         return String.format(getRentalID() + "," + getCustomerID() + "," + getRego() + "," + getRentalStart() + "," + getRentalEnd() + "," + isReturned() + "," + isOverdue() + "," + getTotalCost());
     }
     
+    //appdisplay used to format data for app
     public String appDisplay() {
         String result1 = returned ? "Yes" : "No";
         String result2 = overdue ? "Yes" : "No";

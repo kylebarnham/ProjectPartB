@@ -13,12 +13,14 @@ public class Van extends Vehicle {
     private int passengersVan;
     private boolean wheelchairAccess;
 
+    //constructor
     public Van(String rego, String make, String model, int year, String colour, int odometer, boolean manual, float costPerDay, boolean available, int passengersVan, boolean wheelchairAccess) {
         super(rego, make, model, year, colour, odometer, manual, costPerDay, available);
         this.passengersVan = passengersVan;
         this.wheelchairAccess = wheelchairAccess;
     }
 
+    //getters and setters
     public int getPassengersVan() {
         return passengersVan;
     }
@@ -35,10 +37,17 @@ public class Van extends Vehicle {
         this.wheelchairAccess = wheelchairAccess;
     }
 
+    //toString used to format data for vehicle.txt
     @Override
     public String toString() {
         return super.toString() + "," + 0 + "," + 0 + "," + getPassengersVan() + "," + isWheelchairAccess() + "," + 0 + "," + 0;
     }
     
+    //appdisplay used to format data for app
+    @Override
+    public String appDisplay() {
+        String result = wheelchairAccess ? "Yes" : "No";
+        return super.appDisplay() + "\nPassengers: " + getPassengersVan() + "\nWheelchair Access: " + result;
+    }
     
 }
