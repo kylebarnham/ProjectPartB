@@ -288,7 +288,7 @@ public class VehicleAddController implements Initializable {
                 manual = true;
             if(availableRadioCar.isSelected())
                 available = true;
-            Vehicle v = new Car(regoFieldBus.getText(), manufacturerFieldBus.getText(), modelFieldBus.getText(), Integer.parseInt(yearFieldBus.getText()), colourFieldBus.getText(), Integer.parseInt(odoFieldBus.getText()), manual, Float.parseFloat(costFieldBus.getText()), available, typeFieldBus.getText(), Integer.parseInt(passengerFieldBus.getText()));
+            Vehicle v = new Bus(regoFieldBus.getText(), manufacturerFieldBus.getText(), modelFieldBus.getText(), Integer.parseInt(yearFieldBus.getText()), colourFieldBus.getText(), Integer.parseInt(odoFieldBus.getText()), manual, Float.parseFloat(costFieldBus.getText()), available,  Integer.parseInt(passengerFieldBus.getText()), typeFieldBus.getText());
             App.getVehicleDataHandler().addVehicle(v);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Vehicle has been added. Please confirm details :\n" + v.appDisplay());
             alert.show();

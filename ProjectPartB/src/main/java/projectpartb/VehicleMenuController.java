@@ -59,6 +59,6 @@ public class VehicleMenuController implements Initializable {
     
     @FXML
     private void exitAction(ActionEvent event) {
-        App.changeScene(1);
+        App.changeScene(0);
     }
 }
