@@ -38,26 +38,30 @@ public class CustomerMenuController implements Initializable {
     
     @FXML
     private void addAction(ActionEvent event) {
+        //change scene to customer add
         App.changeScene(2);
     }
 
     @FXML
     private void viewAction(ActionEvent event) {
+        //change scene to customer view
         App.changeScene(3);
     }
 
     @FXML
     private void findAction(ActionEvent event) {
+        //change scene to customer edit
         App.changeScene(4);
     }
 
     @FXML
     private void deleteAction(ActionEvent event) {
-     
+        //change scene to customer delete
         App.changeScene(6);
     }
     @FXML
     private void exitAction(ActionEvent event) {
+        //change scene to main menu
         App.changeScene(0);
     }
 }

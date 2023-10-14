@@ -39,26 +39,31 @@ public class VehicleMenuController implements Initializable {
 
     @FXML
     private void addAction(ActionEvent event) {
+        //change scene to add vehicle
         App.changeScene(8);
     }
 
     @FXML
     private void viewAction(ActionEvent event) {
+        //change scene to view vehicle
         App.changeScene(9);
     }
 
     @FXML
     private void findAction(ActionEvent event) {
+        //change scene to edit vehicle
         App.changeScene(11);
     }
 
     @FXML
     private void deleteAction(ActionEvent event) {
+        //change scene to delete vehilce
         App.changeScene(12);
     }
     
     @FXML
     private void exitAction(ActionEvent event) {
+        //change scene to main menu
         App.changeScene(0);
     }
 }

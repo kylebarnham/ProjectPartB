@@ -129,7 +129,7 @@ public class VehicleDataHandler {
     {
         vehicleList.add(v); 
     }
-    
+    //method to update vehicle in arraylist
     public void updateVehicle(String rego, Vehicle v)
     {
         int index = -1;
@@ -143,7 +143,7 @@ public class VehicleDataHandler {
         }
         vehicleList.set(index, v);             
     }
-    
+    //method to delete vehicle in arraylist
     public void deleteVehicle(String rego)
     {
         int index = -1;
@@ -157,7 +157,7 @@ public class VehicleDataHandler {
         }
         vehicleList.remove(index);             
     }
-    
+    //method to find vehicle
     public int findVehicleRecord(String rego) {
         int index = -1;
         
@@ -170,7 +170,7 @@ public class VehicleDataHandler {
         }
         return index;
     }
-    
+    //method to display vehicle details
     public String searchVehicle(String rego) {
         String searchVehicle = "";
         int index = -1;
@@ -188,7 +188,7 @@ public class VehicleDataHandler {
             return searchVehicle + "No Vehicle record Found";
         }
     }
-    
+    //boolean method to check if vehicle exists
     public boolean checkVehicleExists(String rego) {
         int index = -1;
         int size = vehicleList.size();
@@ -202,7 +202,7 @@ public class VehicleDataHandler {
         else
             return false;
     }
-    
+    //method to display all vehicle details
     public String getDisplayOutput() {  
         //string to store final output
         String output = "";
@@ -225,7 +225,6 @@ public class VehicleDataHandler {
             return output + "No Vehicles found";
         }     
     }  
-    
     //method to get total cost of rental
     public float totalCost(String rego, int days) {
         int index = -1;
@@ -238,11 +237,11 @@ public class VehicleDataHandler {
                 index = i;
         }
         if(index > -1) {
+            //add vehicle cost
             costOfVehicle += vehicleList.get(index).getCostPerDay() * days;
         } 
         return totalCost + costOfVehicle;
     }
-    
     //method to check if car is available
     public boolean isVehicleAvailable(String rego) {
         int index = -1;
@@ -259,7 +258,7 @@ public class VehicleDataHandler {
         else
             return false;
     }
-    
+    //method to check if vehicle is manual
     public boolean isVehicleManual(String rego) {
         int index = -1;
         

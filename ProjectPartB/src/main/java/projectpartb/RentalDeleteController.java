@@ -57,19 +57,27 @@ public class RentalDeleteController implements Initializable {
                 if (response == ButtonType.OK) {
                 //deletes record from arraylist in datahandler 
                 App.getRentalDataHandler().deleteRental(rentalID);
+                //clear fields
                 rentalIDField.setText("");
                 textArea.setText("");
                 }
             });
         }
+        //error alert if customer doesn't exist
         else {
         Alert alert = new Alert(Alert.AlertType.ERROR, "Rental ID doesn't exist");
         alert.show();
+        //clear fields
+        rentalIDField.setText("");
+        textArea.setText("");
         }
     }
 
     @FXML
     private void backAction(ActionEvent event) {
+        //clear fields
+        rentalIDField.setText("");
+        textArea.setText("");
         //change scene to rentalMenu
         App.changeScene(13);
     }

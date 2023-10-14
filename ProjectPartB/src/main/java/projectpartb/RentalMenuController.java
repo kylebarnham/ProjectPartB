@@ -38,26 +38,31 @@ public class RentalMenuController implements Initializable {
     
     @FXML
     private void createAction(ActionEvent event) {
+        //change scene to rental add
         App.changeScene(14);
     }
 
     @FXML
     private void viewAction(ActionEvent event) {
+        //change scene to rental view
         App.changeScene(15);
     }
 
     @FXML
     private void findAction(ActionEvent event) {
+        //change scene to rental edit
         App.changeScene(17);
     }
     
     @FXML
     private void deleteAction(ActionEvent event) {
+        //change scene to rental delete
         App.changeScene(18);
     }
 
     @FXML
     private void exitAction(ActionEvent event) {
+        // change scene to main menu
         App.changeScene(0);
     }
 }

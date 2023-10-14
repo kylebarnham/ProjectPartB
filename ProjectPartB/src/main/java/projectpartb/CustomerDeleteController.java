@@ -39,19 +39,27 @@ public class CustomerDeleteController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    //method to clear fields
+    public void clearFields() {
+        textArea.setText("");
+        customerIDField.setText("");
+    }
     @FXML
     private void searchAction(ActionEvent event) {
         int userID = Integer.parseInt(customerIDField.getText());
+        //call searchcustomer method in customerdatahandler to display customer details
         textArea.setText(App.getCustomerDataHandler().searchCustomer(userID));
     }
 
     @FXML
     private void deleteAction(ActionEvent event) {
         int userID = Integer.parseInt(customerIDField.getText());
-        if (App.getCustomerDataHandler().checkCustomerExists(userID)) {    
+        //check if customer exists
+        if (App.getCustomerDataHandler().checkCustomerExists(userID)) {  
+            //confirmation alert to delete customer
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want delete this customer?");
                 alert.showAndWait().ifPresent(response -> {
+                //if ok is selcted delete customer
                 if (response == ButtonType.OK) {
                     App.getCustomerDataHandler().deleteCustomer(userID);
                     customerIDField.setText("");
@@ -59,14 +67,19 @@ public class CustomerDeleteController implements Initializable {
                 }
             }
         );}
+        //error alert if customer doesn't exist
         else {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Customer ID doesn't exist");
             alert.show();
+            customerIDField.setText("");
         }
     }
 
     @FXML
     private void backAction(ActionEvent event) {
+        //clearfields
+        clearFields();
+        //change scene to customer menu
         App.changeScene(1);
     }
 

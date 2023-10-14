@@ -10,7 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextArea;
 /**
  * FXML Controller class
@@ -31,11 +30,13 @@ public class RentalViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //displays all customer details in text area
         textArea.setText(App.getRentalDataHandler().getDisplayOutput());
     }    
     
     @FXML
     private void backAction(ActionEvent event) {
+        //changes scene to rental menu
         App.changeScene(13);
     }
 

@@ -57,7 +57,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private void exitAction(ActionEvent event) {
-        //saves all data to datahandlers
+        //saves all data to datahandlers on app exit
         App.getCustomerDataHandler().saveData();
         App.getVehicleDataHandler().saveData(); 
         App.getRentalDataHandler().saveData(); 

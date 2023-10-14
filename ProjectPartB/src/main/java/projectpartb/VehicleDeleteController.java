@@ -56,20 +56,28 @@ public class VehicleDeleteController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Vehicle will be deleted. Do you want to continue?");
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
+                    //delete vehicle from vehicledatahandler arraylist
                     App.getVehicleDataHandler().deleteVehicle(rego);
+                    //clear fields
                     regoVehicle.setText("");
                     textArea.setText("");
                 }
             });
         }
         else {
+            //alert if vehicle doesn't exist
             Alert alert = new Alert(Alert.AlertType.ERROR, "Vehicle registration doesn't exist");
             alert.show();
+            //clear fields
+            regoVehicle.setText("");
+            textArea.setText("");
         }
     }
-
     @FXML
     private void backAction(ActionEvent event) {
+        //clear fields
+        regoVehicle.setText("");
+        textArea.setText("");
         //changes scene to vehicle main
         App.changeScene(7);
     }

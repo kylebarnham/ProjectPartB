@@ -30,16 +30,18 @@ public class CustomerViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //display all customer details
         textArea.setText(App.getCustomerDataHandler().getDisplayOutput());
     }    
-    
     @FXML
     private void backAction(ActionEvent event) {
+        //change scene to customer menu
         App.changeScene(1);
     }
 
     @FXML
     private void updateAction(ActionEvent event) {
+        //update all customer details
         textArea.setText(App.getCustomerDataHandler().getDisplayOutput());
     }
 

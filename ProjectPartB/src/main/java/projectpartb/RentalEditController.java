@@ -220,18 +220,22 @@ public class RentalEditController implements Initializable {
             //display alert with customer details
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Rental has been updated. Please confirm details :\n" + r.appDisplay());
             alert.show();
+            //clear all fields
             clearFields();
         }
     }
     
     @FXML
     private void clearAction(ActionEvent event) {
+        //clear all fields
         clearFields();
     }
     
     @FXML
     private void backAction(ActionEvent event) {
+        //change scene to rental menu
         App.changeScene(13);
+        //clear all fields
         clearFields();
     }
 
