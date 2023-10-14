@@ -12,7 +12,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectpartb.CustomerEditController">
    <children>
       <Button fx:id="backButton" layoutX="496.0" layoutY="361.0" mnemonicParsing="false" onAction="#backAction" prefHeight="25.0" prefWidth="90.0" text="Back" />
-      <Button fx:id="submitButton" layoutX="207.0" layoutY="336.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="25.0" prefWidth="90.0" text="Submit" />
+      <Button fx:id="submitButton" layoutX="207.0" layoutY="336.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="25.0" prefWidth="90.0" text="Update" />
       <TextField fx:id="customerIDField" layoutX="187.0" layoutY="55.0" prefHeight="25.0" prefWidth="135.0" promptText="Customer ID" />
       <TextField fx:id="nameField" layoutX="333.0" layoutY="102.0" prefHeight="25.0" prefWidth="216.0" promptText="Name" />
       <DatePicker fx:id="dobDate" layoutX="333.0" layoutY="135.0" prefHeight="25.0" prefWidth="216.0" promptText="Birth Date" />
@@ -20,7 +20,7 @@
       <TextField fx:id="emailField" layoutX="333.0" layoutY="201.0" prefHeight="25.0" prefWidth="216.0" promptText="Email" />
       <TextField fx:id="licenseNumberField" layoutX="333.0" layoutY="234.0" prefHeight="25.0" prefWidth="216.0" promptText="License Number" />
       <DatePicker fx:id="licenseExpiryDate" layoutX="333.0" layoutY="267.0" prefHeight="25.0" prefWidth="216.0" promptText="License Expiry" />
-      <Label layoutX="229.0" layoutY="14.0" text="Edit Customer Details">
+      <Label layoutX="209.0" layoutY="14.0" text="Find/Edit Customer Details">
          <font>
             <Font size="15.0" />
          </font>

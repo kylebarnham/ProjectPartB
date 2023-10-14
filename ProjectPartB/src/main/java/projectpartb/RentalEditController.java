@@ -73,13 +73,16 @@ public class RentalEditController implements Initializable {
         else
             return true; 
     }
-    //boolean to check if input is number 
-    public boolean isNumeric(String input) {
-        int check = Integer.parseInt(input);
-            if (check >= 0)
-                return true;
-            else
-                return false;
+    //check if a string is numeric
+    private boolean isNumeric(String str)
+    {
+	for (int i = 0; i < str.length(); i++)
+    	{
+    	    if (!Character.isDigit(str.charAt(i)))
+		return false;
+	}
+
+	return true;
     }
     //boolean to check if input is a positive number
     private boolean isPositive(String input)
@@ -185,7 +188,7 @@ public class RentalEditController implements Initializable {
             regoField.setText("");
         }
         //check if can drive the vehicle
-        else if (canDrive(Integer.parseInt(customerIDField.getText()), regoField.getText())) {
+        else if (!canDrive(Integer.parseInt(customerIDField.getText()), regoField.getText())) {
             cantDriveErrorAlert();
             regoField.setText("");
         }
@@ -229,6 +232,7 @@ public class RentalEditController implements Initializable {
     @FXML
     private void backAction(ActionEvent event) {
         App.changeScene(13);
+        clearFields();
     }
 
 }

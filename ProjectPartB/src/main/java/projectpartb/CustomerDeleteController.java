@@ -59,6 +59,10 @@ public class CustomerDeleteController implements Initializable {
                 }
             }
         );}
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Customer ID doesn't exist");
+            alert.show();
+        }
     }
 
     @FXML

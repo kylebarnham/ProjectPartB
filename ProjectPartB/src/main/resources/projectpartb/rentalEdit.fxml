@@ -24,7 +24,7 @@
       <DatePicker fx:id="rentalEndDate" layoutX="317.0" layoutY="215.0" prefHeight="25.0" prefWidth="216.0" promptText="Rental End" />
       <RadioButton fx:id="returnedRadio" layoutX="317.0" layoutY="250.0" mnemonicParsing="false" text="Returned" />
       <RadioButton fx:id="overdueRadio" layoutX="317.0" layoutY="277.0" mnemonicParsing="false" text="Overdue" />
-      <Button fx:id="submitButton" layoutX="218.0" layoutY="312.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="25.0" prefWidth="90.0" text="Submit" />
+      <Button fx:id="submitButton" layoutX="218.0" layoutY="312.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="25.0" prefWidth="90.0" text="Update" />
       <Button fx:id="clearButton" layoutX="317.0" layoutY="312.0" mnemonicParsing="false" onAction="#clearAction" prefHeight="25.0" prefWidth="90.0" text="Clear" />
       <Button fx:id="backButton" layoutX="496.0" layoutY="361.0" mnemonicParsing="false" onAction="#backAction" prefHeight="25.0" prefWidth="90.0" text="Back" />
       <TextArea fx:id="textArea" layoutX="53.0" layoutY="108.0" prefHeight="190.0" prefWidth="255.0" />

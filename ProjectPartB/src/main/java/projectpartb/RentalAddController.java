@@ -55,18 +55,23 @@ public class RentalAddController implements Initializable {
     }
     //boolean to check if fields are blank
     public boolean isBlank() {
-        if(customerIDField.getText().equals("") | customerIDField.getText().equals("") | regoField.getText().equals("") | rentalStartDate == null | rentalEndDate == null)
+        LocalDate start = rentalStartDate.getValue();
+        LocalDate end = rentalEndDate.getValue();
+        if(customerIDField.getText().equals("") | customerIDField.getText().equals("") | regoField.getText().equals("") | start == null | end == null)
             return false;
         else
             return true; 
     }
-    //boolean to check if input is number 
-    public boolean isNumeric(String input) {
-        int check = Integer.parseInt(input);
-            if (check >= 0)
-                return true;
-            else
-                return false;
+    //check if a string is numeric
+    private boolean isNumeric(String str)
+    {
+	for (int i = 0; i < str.length(); i++)
+    	{
+    	    if (!Character.isDigit(str.charAt(i)))
+		return false;
+	}
+
+	return true;
     }
     //boolean to check if input is a positive number
     private boolean isPositive(String input)
@@ -93,13 +98,13 @@ public class RentalAddController implements Initializable {
     //alert for member ID, phone number, registration fee and discount not being numeric
     public void numericErrorAlert()
     {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Rental ID and Customer ID");
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Rental ID and Customer ID are numeric");
         alert.show();
     }
     //alert if registration field is entered as a negative number
     public void positiveErrorAlert()
     {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number and License are positive numbers");
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID and Rental ID are positive numbers");
         alert.show();
     }
     //alert to let user know the member already exists

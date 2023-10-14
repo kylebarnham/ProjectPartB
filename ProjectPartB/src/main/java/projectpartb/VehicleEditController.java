@@ -170,12 +170,16 @@ public class VehicleEditController implements Initializable {
             return true; 
     }
     
-    public boolean isNumeric(String input) {
-        int check = Integer.parseInt(input);
-            if (check >= 0)
-                return true;
-            else
-                return false;
+    //check if a string is numeric
+    private boolean isNumeric(String str)
+    {
+	for (int i = 0; i < str.length(); i++)
+    	{
+    	    if (!Character.isDigit(str.charAt(i)))
+		return false;
+	}
+
+	return true;
     }
     
     private boolean isPositive(String input)

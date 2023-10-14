@@ -62,6 +62,10 @@ public class RentalDeleteController implements Initializable {
                 }
             });
         }
+        else {
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Rental ID doesn't exist");
+        alert.show();
+        }
     }
 
     @FXML

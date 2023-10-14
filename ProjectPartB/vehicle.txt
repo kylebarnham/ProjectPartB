@@ -1,3 +1,6 @@
 111AAA,Toyota,Camry,2016,Red,146000,true,15.0,true,Sedan,5,0,0,0,0
 222BBB,Toyota,Hiace,2020,White,45000,false,26.0,true,0,0,6,true,0,0
 333CCC,Mercedes,Hiace,2024,Silver,1200,false,45.0,false,0,0,0,0,8,Bus
+990RNZ,Hyundai,Elantra,1996,Silver,146000,false,10.0,false,Sedan,5,0,0,0,0
+444DDD,Toyota,Hiace,2020,Silver,46000,true,42.0,true,0,0,6,true,0,0
+555EEE,Toyota,Hiace,2019,White,40563,false,65.0,false,0,0,0,0,6,Bus

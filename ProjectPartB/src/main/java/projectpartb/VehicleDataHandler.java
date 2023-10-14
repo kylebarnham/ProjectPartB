@@ -237,7 +237,7 @@ public class VehicleDataHandler {
             if(findVehicle.getRego().equals(rego))
                 index = i;
         }
-        if(index < -1) {
+        if(index > -1) {
             costOfVehicle += vehicleList.get(index).getCostPerDay() * days;
         } 
         return totalCost + costOfVehicle;

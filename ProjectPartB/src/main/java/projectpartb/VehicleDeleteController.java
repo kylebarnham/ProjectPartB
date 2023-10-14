@@ -62,6 +62,10 @@ public class VehicleDeleteController implements Initializable {
                 }
             });
         }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Vehicle registration doesn't exist");
+            alert.show();
+        }
     }
 
     @FXML

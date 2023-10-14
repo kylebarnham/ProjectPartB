@@ -28,7 +28,7 @@
                         <TextField fx:id="passengerFieldCar" layoutX="68.0" layoutY="235.0" prefWidth="216.0" promptText="Number of Passengers" />
                         <RadioButton fx:id="manualRadioCar" layoutX="68.0" layoutY="265.0" mnemonicParsing="false" text="Manual" />
                         <RadioButton fx:id="availableRadioCar" layoutX="176.0" layoutY="265.0" mnemonicParsing="false" text="Available" />
-                        <Button fx:id="submitButtonCar" layoutX="80.0" layoutY="295.0" mnemonicParsing="false" onAction="#submitCar" prefWidth="90.0" text="Submit" />
+                        <Button fx:id="submitButtonCar" layoutX="80.0" layoutY="295.0" mnemonicParsing="false" onAction="#submitCar" prefWidth="90.0" text="Update" />
                         <Button fx:id="clearButtonCar" layoutX="178.0" layoutY="295.0" mnemonicParsing="false" onAction="#clearCarAction" prefWidth="90.0" text="Clear" />
                         <Button fx:id="backButtonCar" layoutX="248.0" layoutY="332.0" mnemonicParsing="false" onAction="#backAction" prefWidth="90.0" text="Back" />
                      </children>
@@ -49,7 +49,7 @@
                         <RadioButton fx:id="wheelchairRadio" layoutX="68.0" layoutY="235.0" mnemonicParsing="false" text="Wheelchair Accessible" />
                         <RadioButton fx:id="manualRadioVan" layoutX="68.0" layoutY="265.0" mnemonicParsing="false" text="Manual" />
                         <RadioButton fx:id="availableRadioVan" layoutX="176.0" layoutY="265.0" mnemonicParsing="false" text="Available" />
-                        <Button fx:id="submitButtonVan" layoutX="80.0" layoutY="295.0" mnemonicParsing="false" onAction="#submitVan" prefWidth="90.0" text="Submit" />
+                        <Button fx:id="submitButtonVan" layoutX="80.0" layoutY="295.0" mnemonicParsing="false" onAction="#submitVan" prefWidth="90.0" text="Update" />
                         <Button fx:id="clearButtonVan" layoutX="178.0" layoutY="295.0" mnemonicParsing="false" onAction="#clearVanAction" prefWidth="90.0" text="Clear" />
                         <Button fx:id="backButtonVan" layoutX="248.0" layoutY="332.0" mnemonicParsing="false" onAction="#backAction" prefWidth="90.0" text="Back" />
                      </children>
@@ -70,7 +70,7 @@
                         <TextField fx:id="passengerFieldBus" layoutX="68.0" layoutY="235.0" prefWidth="216.0" promptText="Number of Passengers" />
                         <RadioButton fx:id="availableRadioBus" layoutX="176.0" layoutY="265.0" mnemonicParsing="false" text="Available" />
                         <RadioButton fx:id="manualRadioBus" layoutX="68.0" layoutY="265.0" mnemonicParsing="false" text="Manual" />
-                        <Button fx:id="submitButtonBus" layoutX="80.0" layoutY="295.0" mnemonicParsing="false" onAction="#submitBus" prefWidth="90.0" text="Submit" />
+                        <Button fx:id="submitButtonBus" layoutX="80.0" layoutY="295.0" mnemonicParsing="false" onAction="#submitBus" prefWidth="90.0" text="Update" />
                         <Button fx:id="clearButtonBus" layoutX="178.0" layoutY="295.0" mnemonicParsing="false" onAction="#clearBusAction" prefWidth="90.0" text="Clear" />
                         <Button fx:id="backButtonBus" layoutX="248.0" layoutY="332.0" mnemonicParsing="false" onAction="#backAction" prefWidth="90.0" text="Back" />
                      </children>

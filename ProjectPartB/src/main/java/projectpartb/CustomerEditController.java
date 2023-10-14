@@ -77,7 +77,19 @@ public class CustomerEditController implements Initializable {
             return true; 
     }
     
-    public boolean isNumeric(String input) {
+    //check if a string is numeric
+    private boolean isNumeric(String str)
+    {
+	for (int i = 0; i < str.length(); i++)
+    	{
+    	    if (!Character.isDigit(str.charAt(i)))
+		return false;
+	}
+
+	return true;
+    }
+    
+    public boolean isPositive(String input) {
         int check = Integer.parseInt(input);
             if (check >= 0)
                 return true;
@@ -94,6 +106,12 @@ public class CustomerEditController implements Initializable {
     
     //alert for member ID, phone number, registration fee and discount not being numeric
     public void numericErrorAlert()
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number and License are numeric");
+        alert.show();
+    }
+    
+    public void positiveErrorAlert()
     {
         Alert alert = new Alert(Alert.AlertType.ERROR, "Please ensure Customer ID, Phone Number and License are positive numbers");
         alert.show();
@@ -113,10 +131,12 @@ public class CustomerEditController implements Initializable {
 
     @FXML
     private void submitAction(ActionEvent event) {
-                if (!isBlank())
+        if (!isBlank())
             blankErrorAlert();
         else if (!isNumeric(customerIDField.getText()) | !isNumeric(phoneField.getText()) | !isNumeric(licenseNumberField.getText()))
             numericErrorAlert();
+        else if (!isPositive(customerIDField.getText()) | !isPositive(phoneField.getText()) | !isPositive(licenseNumberField.getText()))
+            positiveErrorAlert();
         else if (!App.getCustomerDataHandler().checkCustomerExists(Integer.parseInt(this.customerIDField.getText()))) {
             noCustomerErrorAlert();
             customerIDField.setText("");

@@ -108,7 +108,7 @@ public class CustomerDataHandler {
     {
         customerList.add(u); 
     }
-    
+    //method to update existing customer in arraylist
     public void updateCustomer(int userID, Customer u)
     {
         int index = -1;
@@ -122,7 +122,7 @@ public class CustomerDataHandler {
         }
         customerList.set(index, u);             
     }
-    
+    //method to delete existing customer in arraylist
     public void deleteCustomer(int userID)
     {
         int index = -1;
@@ -136,7 +136,7 @@ public class CustomerDataHandler {
         }
         customerList.remove(index);             
     }
-    
+    //method to find customer
     public int findCustomerRecord(int userID) {
         int index = -1;
         
@@ -149,7 +149,7 @@ public class CustomerDataHandler {
         }
         return index;
     }
-    
+    //method to display customer record if found
     public String searchCustomer(int userID) {
         String searchCustomer = "";
         int index = -1;
@@ -164,10 +164,10 @@ public class CustomerDataHandler {
             return searchCustomer + customerList.get(index).appDisplay();
         }
         else {
-            return searchCustomer + "No Customer record Found";
+            return searchCustomer + "No Customer record found";
         }
     }
-    
+    //method to check if customer exists
     public boolean checkCustomerExists(int userID) {
         int index = -1;
         int size = customerList.size();
@@ -176,12 +176,14 @@ public class CustomerDataHandler {
             if(findCustomer.getUserID() == userID)
                 index = i;
         }
+        //if index is greater than -1
         if(index > -1)
+            //customer exists return true
             return true;
         else
             return false;
     }
-    
+    //method to display a list of all customers
     public String getDisplayOutput()
     {  
         //string to store final output
@@ -206,7 +208,7 @@ public class CustomerDataHandler {
             return output + "No Customers found";
         }     
     }     
-    
+    //method to check if customer has manual license
     public boolean checkManualLicense(int userID) {
         int index = -1;
         int size = customerList.size();
@@ -215,6 +217,7 @@ public class CustomerDataHandler {
             if(findCustomer.getUserID() == userID)
                 index = i;
         }
+        //check if customer has manual license and return true if true
         if(customerList.get(index).isManualLicense() == true)
             return true;
         else
